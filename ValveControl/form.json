@@ -15,11 +15,9 @@
         ],
     "actions": [
                   
-         { "type": "Button", "caption": "Function", "onclick": "VALVE_MeineErsteEigeneFunktion();" },
+         { "type": "Button", "caption": "Function", "onclick": "VALVE_MeineErsteEigeneFunktion(($id);" },
          { "type": "Button", "caption": "An", "onClick": "echo $id;" },
          { "type": "Button", "caption": "Reset", "onClick": "SetValue(10209, 0);", "confirm": "Dies setzt die Variable zurück auf 0. Dabei können wichtige Daten verloren gehen. Sind Sie sicher?" }
-
-
     ],
 
     "status": []
