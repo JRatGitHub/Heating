@@ -7,9 +7,9 @@
             { "type": "IntervalBox", "name": "ValveCloseDelay", "caption": "Seconds"},
             
             {
-                "name": "LightsCategory",
-                "type": "SelectCategory",
-                "caption": "Lamps category"
+                "name": "Valve ID",
+                "type": "SelectInstance",
+                "caption": "Valve ID"
               }
           
 
