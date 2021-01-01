@@ -16,10 +16,7 @@
         
             { "type": "ValidationTextBox", "name": "Message", "caption": "Message" },
         
-            {"type": "Button",
-            "label": "On",
-            "onClick": "MeineErsteEigeneFunktion()"
-        }
+            { "type": "Button", "label": "On", "onclick": "ValveOn()" }
     ],
 
     "status": []
