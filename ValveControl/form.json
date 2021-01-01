@@ -2,6 +2,9 @@
     "elements": [
             { "type": "Label", "label": "Delay time to open the valve:" },
             { "type": "IntervalBox", "name": "ValveOpenDelay", "caption": "Seconds"}
+            
+            { "type": "Label", "label": "Delay time to close the valve:" },
+            { "type": "IntervalBox", "name": "ValveCloseDelay", "caption": "Seconds"}
         ],
     "actions": [],
     "status": []
