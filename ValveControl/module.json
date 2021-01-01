@@ -3,7 +3,7 @@
     "name": "ValveControl",
     "type": 3,
     "vendor": "JRE",
-    "aliases": "Valve Control",
+    "aliases": [ "Valve Control" ],
     "parentRequirements": [],
     "childRequirements": [],
     "implemented": [],
