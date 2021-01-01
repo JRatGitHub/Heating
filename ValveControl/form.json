@@ -18,7 +18,7 @@
         {
             "type": "Button",
             "label": "On",
-            "onClick": "echo $ValveID;"
+            "onClick": "echo $this->ReadPropertyString('ValveID');"
         }
     ],
     "status": []
