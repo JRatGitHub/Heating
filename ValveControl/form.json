@@ -10,15 +10,13 @@
                 "name": "ValveID",
                 "type": "SelectInstance",
                 "caption": "Valve ID"
-              }
-          
-
+            }
         ],
     "actions": [
         {
             "type": "Button",
             "label": "On",
-            "onClick": "ValveOn($id);"
+            "onClick": "MeineErsteEigeneFunktion()"
         }
     ],
     "status": []
