@@ -6,6 +6,12 @@
             { "type": "Label", "label": "Delay time to close the valve:" },
             { "type": "IntervalBox", "name": "ValveCloseDelay", "caption": "Seconds"}
         ],
-    "actions": [],
+    "actions": [
+        {
+            "type": "Button",
+            "label": "On",
+            "onClick": "HUE_SetState($id, true);"
+        }
+    ],
     "status": []
 }
