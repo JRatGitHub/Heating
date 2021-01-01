@@ -1,0 +1,12 @@
+{
+    "id": "{559A25F6-472E-F97E-40EA-1BFE634904CF}",
+    "name": "PWMControl",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "PWM",
+    "url": ""
+}

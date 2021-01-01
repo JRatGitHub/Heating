@@ -1,0 +1,12 @@
+{
+    "id": "{E744FA58-3958-A576-BFDD-413E0BF0E0C7}",
+    "name": "PIDControl",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "PID",
+    "url": ""
+}

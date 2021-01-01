@@ -1,0 +1,12 @@
+{
+    "id": "{72B9E603-C1F9-4E6E-297C-1640B80E916E}",
+    "name": "ValveControl",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "VALVE",
+    "url": ""
+}
