@@ -4,7 +4,15 @@
             { "type": "IntervalBox", "name": "ValveOpenDelay", "caption": "Seconds"},
             
             { "type": "Label", "label": "Delay time to close the valve:" },
-            { "type": "IntervalBox", "name": "ValveCloseDelay", "caption": "Seconds"}
+            { "type": "IntervalBox", "name": "ValveCloseDelay", "caption": "Seconds"},
+            
+            {
+                "name": "LightsCategory",
+                "type": "SelectCategory",
+                "caption": "Lamps category"
+              }
+          
+
         ],
     "actions": [
         {
