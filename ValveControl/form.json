@@ -13,10 +13,8 @@
             }
         ],
     "actions": [
-        
-            { "type": "ValidationTextBox", "name": "Message", "caption": "Message" },
-            { "type": "Button", "label": "Send Message", "onClick": "SMS_Send($id, $Number, $Message);" },
-            { "type": "Button", "label": "Echo", "onclick": "ValveOn()" }
+                  
+         { "type": "Button", "label": "Echo", "onclick": "VALVE_ValveOn()" }
     ],
 
     "status": []
