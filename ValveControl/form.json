@@ -13,11 +13,14 @@
             }
         ],
     "actions": [
-        {
-            "type": "Button",
+        
+            { "type": "ValidationTextBox", "name": "Message", "caption": "Message" },
+        
+            {"type": "Button",
             "label": "On",
             "onClick": "MeineErsteEigeneFunktion()"
         }
     ],
+
     "status": []
 }
