@@ -24,4 +24,8 @@
 			parent::ApplyChanges();
 		}
 
+		public function MeineErsteEigeneFunktion() {
+            echo $this->InstanceID;
+        }
+
 	}
