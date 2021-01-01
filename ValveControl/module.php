@@ -5,6 +5,10 @@
 		{
 			//Never delete this line!
 			parent::Create();
+			//$this->RegisterPropertyString('Mac', '');
+			//$this->RegisterPropertyInteger('ScanInterval', 60);
+			$this->RegisterPropertyInteger('ValveDelay',60);
+			  }
 		}
 
 		public function Destroy()
