@@ -16,7 +16,7 @@
         
             { "type": "ValidationTextBox", "name": "Message", "caption": "Message" },
         
-            { "type": "Button", "label": "On", "onclick": "ValveOn()" }
+            { "type": "Button", "label": "Echo", "onclick": "ValveOn()" }
     ],
 
     "status": []
