@@ -9,6 +9,7 @@
 			//$this->RegisterPropertyInteger('ScanInterval', 60);
 			$this->RegisterPropertyInteger('ValveOpenDelay',60);
 			$this->RegisterPropertyInteger('ValveCloseDelay',60);
+			$this->RegisterPropertyInteger('Seconds',10);
 			$this->RegisterPropertyInteger('ValveID', 0);
 		}
 
