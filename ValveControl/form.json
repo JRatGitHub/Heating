@@ -14,7 +14,7 @@
         ],
     "actions": [
                   
-         { "type": "Button", "caption": "Echo", "onclick": "VALVEValveOn()" },
+         { "type": "Button", "caption": "Echo", "onclick": "VALVEValveOn();" },
          { "type": "Button", "caption": "An", "onClick": "echo $id;" }
     ],
 
