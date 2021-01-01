@@ -1,8 +1,8 @@
 {
     "id": "{72B9E603-C1F9-4E6E-297C-1640B80E916E}",
-    "name": "Valve Control",
+    "name": "ValveControl",
     "type": 3,
-    "vendor": "",
+    "vendor": "JRE",
     "aliases": [],
     "parentRequirements": [],
     "childRequirements": [],
