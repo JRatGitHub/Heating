@@ -25,6 +25,7 @@
 		}
 
 		public function MeineErsteEigeneFunktion() {
+			IPS_LogMessage('Valve Control', 'Valve Control mijn fun');
             echo $this->InstanceID;
 		}
 		
