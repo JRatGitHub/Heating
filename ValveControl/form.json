@@ -14,7 +14,7 @@
         ],
     "actions": [
                   
-         { "type": "Button", "label": "Echo", "onclick": "VALVEValveOn()" }
+         { "type": "Button", "caption": "Echo", "onclick": "VALVEValveOn()" }
     ],
 
     "status": []
