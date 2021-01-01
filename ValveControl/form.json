@@ -18,7 +18,7 @@
         {
             "type": "Button",
             "label": "On",
-            "onClick": "ValveOn(($id);"
+            "onClick": "ValveOn($id);"
         }
     ],
     "status": []
