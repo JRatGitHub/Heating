@@ -1,5 +1,7 @@
 {
-    "elements": [],
+    "elements": [
+            { "type": "IntervalBox", "name": "ValveDelay", "caption": "Seconds"}
+        ],
     "actions": [],
     "status": []
 }
