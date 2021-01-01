@@ -18,7 +18,7 @@
         {
             "type": "Button",
             "label": "On",
-            "onClick": "HUE_SetState($id, true);"
+            "onClick": "echo $ValveID;"
         }
     ],
     "status": []
