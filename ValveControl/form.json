@@ -7,7 +7,7 @@
             { "type": "IntervalBox", "name": "ValveCloseDelay", "caption": "Seconds"},
             
             {
-                "name": "Valve ID",
+                "name": "ValveID",
                 "type": "SelectInstance",
                 "caption": "Valve ID"
               }
