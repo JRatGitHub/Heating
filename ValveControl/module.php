@@ -31,7 +31,7 @@
 		public function ValveOn()
 		{
 			$ValveID = $this->ReadPropertyInteger('ValveID');
-			echo $ValveID;
+			echo $ValveID ."\n";
 
 		}
 	}
