@@ -30,6 +30,7 @@
 		
 		public function ValveOn()
 		{
+			{ "type": "Button", "label": "Send Message", "onClick": "SMS_Send($id, $Number, $Message);" },
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
 			//IPS_LogMessage('Heating', $ValveID ."\n"); 
 			echo  " Hallo Wereld \n";
