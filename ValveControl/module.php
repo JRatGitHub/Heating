@@ -8,6 +8,7 @@
 			//$this->RegisterPropertyString('Mac', '');
 			//$this->RegisterPropertyInteger('ScanInterval', 60);
 			$this->RegisterPropertyInteger('ValveOpenDelay',60);
+			$this->RegisterPropertyInteger('ValveCloseDelay',60);
 		}
 
 		public function Destroy()
