@@ -4,7 +4,8 @@
             { "type": "IntervalBox", "name": "ValveOpenDelay", "caption": "Seconds"},
             
             { "type": "Label", "label": "Delay time to close the valve:" },
-            { "type": "IntervalBox", "name": "ValveCloseDelay", "caption": "Seconds"},
+            { "type": "NumberSpinner", "name": "ValveCloseDelay", "caption": "Seconds"},
+            { "type": "NumberSpinner", "name": "Seconds", "caption": "Seconds", "suffix": "seconds"},
             
             {
                 "name": "ValveID",
@@ -14,7 +15,7 @@
         ],
     "actions": [
                   
-         { "type": "Button", "caption": "Echo", "onclick": "VALVE_ValveOn();" },
+         { "type": "Button", "caption": "Echo", "onclick": "VALVE_MeineErsteEigeneFunktion();" },
          { "type": "Button", "caption": "An", "onClick": "echo $id;" },
          { "type": "Button", "caption": "Reset", "onClick": "SetValue(10209, 0);", "confirm": "Dies setzt die Variable zurück auf 0. Dabei können wichtige Daten verloren gehen. Sind Sie sicher?" }
 
