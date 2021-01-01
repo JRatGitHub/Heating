@@ -26,6 +26,13 @@
 
 		public function MeineErsteEigeneFunktion() {
             echo $this->InstanceID;
-        }
+		}
+		
+		public function ValveOn()
+		{
+			$ValveID = $this->ReadPropertyInteger('ValveID');
+			echo $ValveID;
+
+		}
 
 	}
