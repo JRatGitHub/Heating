@@ -11,7 +11,7 @@
 			$this->RegisterPropertyInteger('ValveCloseDelay',60);
 			$this->RegisterPropertyInteger('Seconds',10);
 			$this->RegisterPropertyInteger('ValveID', 0);
-			
+
 		}
 
 		public function Destroy()
@@ -24,10 +24,13 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
+
+			$HeatRequestId = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
+			$ValveId = $this->RegisterVariableBoolean('ValveSTATE', 'Valve');
 		}
 
 		public function MeineErsteEigeneFunktion() {
-			IPS_LogMessage('Valve Control', 'Valve Control mijn fun');
+			//IPS_LogMessage('Valve Control', 'Valve Control mijn fun');
             echo $this->InstanceID;
 		}
 		
