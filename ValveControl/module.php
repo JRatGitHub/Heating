@@ -53,7 +53,7 @@
 		public function Scan()
 		{
 			$ValveLink = $this->ReadPropertyInteger('ValveID');
-			echo $$ValveLink;
+			echo $ValveLink;
 			IPS_LogMessage('ValveDevice', 'Hello Semaphore in Scan');
 
 	
