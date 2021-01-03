@@ -25,10 +25,11 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
-
+			$ValveRequestID = $this->RegisterVariableBoolean('ValveRequest', 'Valve Request');
 			$HeatRequestID = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
 			$ValveID= $this->RegisterVariableBoolean('ValveStatus', 'Valve');
 			$StatusID = $this->RegisterVariableString('Status', 'Status', '', 2);
+
 		}
 
 
