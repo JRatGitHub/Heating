@@ -1,7 +1,7 @@
 {
     "elements": [
             { "type": "Label", "label": "Valve:" },
-            { "type": "IntervalBox", "name": "ValveOpenDelay", "caption": "time to open", "suffix": "seconds"},
+            { "type": "NumberSpinner", "name": "ValveOpenDelay", "caption": "time to open", "suffix": "seconds"},
             { "type": "NumberSpinner", "name": "ValveCloseDelay", "caption": "time to close", "suffix": "seconds"},
            
             
