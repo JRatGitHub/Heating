@@ -4,13 +4,19 @@
             { "type": "IntervalBox", "name": "ValveOpenDelay", "caption": "Seconds"},
             
             { "type": "Label", "label": "Delay time to close the valve:" },
-            { "type": "NumberSpinner", "name": "ValveCloseDelay", "caption": "Seconds"},
+            { "type": "NumberSpinner", "name": "ValveCloseDelay", "caption": "Seconds", "suffix": "seconds"},
             { "type": "NumberSpinner", "name": "Seconds", "caption": "Seconds", "suffix": "seconds"},
             
             {
                 "name": "ValveID",
                 "type": "SelectInstance",
                 "caption": "Valve ID"
+            },
+
+            {
+                "name": "HeatRequestID",
+                "type": "SelectInstance",
+                "caption": "Heat Request ID"
             }
         ],
     "actions": [
