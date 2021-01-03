@@ -15,7 +15,7 @@
         ],
     "actions": [
                   
-         { "type": "Button", "caption": "Function", "onclick": "VALVE_MeineErsteEigeneFunktion($id);" },
+         { "type": "Button", "caption": "Valve On", "onclick": "VALVE_ValveOn($id);" },
          { "type": "Button", "caption": "An", "onClick": "echo $ValveID;" },
          { "type": "Button", "caption": "Reset", "onClick": "SetValue(10209, 0);", "confirm": "Dies setzt die Variable zurück auf 0. Dabei können wichtige Daten verloren gehen. Sind Sie sicher?" },
          { "type": "Button", "caption": "On", "onClick": "HM_WriteValueBoolean($ValveId,'STATE',True);"},
