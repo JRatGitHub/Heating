@@ -46,6 +46,13 @@
 		{
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
 			//IPS_LogMessage('Heating', $ValveId ."\n"); 
-			HM_WriteValueBoolean($ValveID,'STATE',True);
+			HM_Write
+			ValueBoolean($ValveID,'STATE',True);
 		}
+
+		public function Scan()
+		{
+			IPS_LogMessage('ValveDevice', 'Hello Semaphore in Scan');
+	
+		}	
 	}
