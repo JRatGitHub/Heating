@@ -26,7 +26,8 @@
 			parent::ApplyChanges();
 
 			$HeatRequestId = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
-			$ValveId = $this->RegisterVariableBoolean('ValveSTATE', 'Valve');
+			$ValveId = $this->RegisterVariableBoolean('ValveStatus', 'Valve');
+			$StatusId = $this->RegisterVariableString('Status', 'Status', '', 2);
 		}
 
 		public function MeineErsteEigeneFunktion() {
