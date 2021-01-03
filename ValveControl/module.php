@@ -39,15 +39,16 @@
 		public function ValveOff()
 		{
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
-			//IPS_LogMessage('Heating', $ValveID ."\n"); 
-			HM_WriteValueBoolean($ValveID,'STATE',False);
+			//IPS_LogMessage('Heating', $ValveID ."\n");
+			
+			HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
 		}
 
 		public function ValveOn()
 		{
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
 			//IPS_LogMessage('Heating', $ValveId ."\n"); 
-			HM_WriteValueBoolean($ValveID,'STATE',True);
+			HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',True);
 		}
 
 		public function Scan()
