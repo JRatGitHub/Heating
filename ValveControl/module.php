@@ -10,7 +10,7 @@
 			$this->RegisterPropertyInteger('ValveOpenDelay',60);
 			$this->RegisterPropertyInteger('ValveCloseDelay',60);
 			$this->RegisterPropertyInteger('Seconds',10);
-			$this->RegisterPropertyInteger('ValveId', 0);
+			$this->RegisterPropertyInteger('ValveID', 0);
 
 		}
 
@@ -25,9 +25,9 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-			$HeatRequestId = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
-			$ValveId = $this->RegisterVariableBoolean('ValveStatus', 'Valve');
-			$StatusId = $this->RegisterVariableString('Status', 'Status', '', 2);
+			$HeatRequestID = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
+			$ValveID= $this->RegisterVariableBoolean('ValveStatus', 'Valve');
+			$StatusID = $this->RegisterVariableString('Status', 'Status', '', 2);
 		}
 
 
@@ -52,7 +52,7 @@
 
 		public function Scan()
 		{
-			echo $ValveId;
+			echo $ValveID;
 			IPS_LogMessage('ValveDevice', 'Hello Semaphore in Scan');
 
 	

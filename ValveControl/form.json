@@ -8,18 +8,18 @@
             { "type": "NumberSpinner", "name": "Seconds", "caption": "Seconds", "suffix": "seconds"},
             
             {
-                "name": "ValveId",
+                "name": "ValveID",
                 "type": "SelectInstance",
                 "caption": "Valve ID"
             }
         ],
     "actions": [
                   
-         { "type": "Button", "label": "Valve On", "onclick": "VALVE_ValveOn($id);" },
-         { "type": "Button", "caption": "An", "onClick": "echo $ValveId;" },
-         { "type": "Button", "caption": "Reset", "onClick": "SetValue(10209, 0);", "confirm": "Dies setzt die Variable zurück auf 0. Dabei können wichtige Daten verloren gehen. Sind Sie sicher?" },
-         { "type": "Button", "caption": "On", "onClick": "HM_WriteValueBoolean($ValveId,'STATE',True);"},
-         { "type": "Button", "caption": "Off", "onClick": "HM_WriteValueBoolean($ValveId,'STATE',False);"},
+         { "type": "Button", "label": "_Valve On", "onclick": "VALVE_ValveOn($id);" },
+         { "type": "Button", "caption": "_An", "onClick": "echo $ValveId;" },
+         { "type": "Button", "caption": "_Reset", "onClick": "SetValue(10209, 0);", "confirm": "Dies setzt die Variable zurück auf 0. Dabei können wichtige Daten verloren gehen. Sind Sie sicher?" },
+         { "type": "Button", "caption": "On", "onClick": "HM_WriteValueBoolean($ValveID,'STATE',True);"},
+         { "type": "Button", "caption": "Off", "onClick": "HM_WriteValueBoolean($ValveID,'STATE',False);"},
 
          {
             "type": "Button",
