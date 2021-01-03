@@ -1,10 +1,8 @@
 {
     "elements": [
-            { "type": "Label", "label": "Delay time to open the valve:" },
-            { "type": "IntervalBox", "name": "ValveOpenDelay", "caption": "Seconds"},
-            
-            { "type": "Label", "label": "Delay time to close the valve:" },
-            { "type": "NumberSpinner", "name": "ValveCloseDelay", "caption": "Time to close", "suffix": "seconds"},
+            { "type": "Label", "label": "Valve:" },
+            { "type": "IntervalBox", "name": "ValveOpenDelay", "caption": "time to open", "suffix": "seconds"},
+            { "type": "NumberSpinner", "name": "ValveCloseDelay", "caption": "time to close", "suffix": "seconds"},
            
             
             {
