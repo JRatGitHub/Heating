@@ -5,8 +5,7 @@
 		{
 			//Never delete this line!
 			parent::Create();
-			//$this->RegisterPropertyString('Mac', '');
-			//$this->RegisterPropertyInteger('ScanInterval', 60);
+
 			$this->RegisterPropertyInteger('ValveOpenDelay',60);
 			$this->RegisterPropertyInteger('ValveCloseDelay',60);
 			$this->RegisterPropertyInteger('Seconds',10);
@@ -25,6 +24,7 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
+
 			$ValveRequestID = $this->RegisterVariableBoolean('ValveRequest', 'Valve Request');
 			$HeatRequestID = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
 			$ValveID= $this->RegisterVariableBoolean('ValveStatus', 'Valve');
@@ -51,6 +51,11 @@
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
 			//IPS_LogMessage('Heating', $ValveId ."\n"); 
 			HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',True);
+		}
+
+		public function Check_HeatRequestID()
+		{
+			echo $this->ReadPropertyInteger('HeatRequestID');
 		}
 
 		public function Scan()

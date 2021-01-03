@@ -14,7 +14,8 @@
             {
                 "name": "HeatRequestID",
                 "type": "SelectVariable",
-                "caption": "Heat Request ID"
+                "caption": "Heat Request ID",
+                "onChange": "VALVE_Check_HeatRequestID($id)"
             }
         ],
     "actions": [
