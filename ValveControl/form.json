@@ -15,9 +15,7 @@
         ],
     "actions": [
                   
-         { "type": "Button", "label": "_Valve On", "onclick": "VALVE_ValveOn($id);" },
-         { "type": "Button", "caption": "_An", "onClick": "echo $ValveId;" },
-         { "type": "Button", "caption": "_Reset", "onClick": "SetValue(10209, 0);", "confirm": "Dies setzt die Variable zurück auf 0. Dabei können wichtige Daten verloren gehen. Sind Sie sicher?" },
+        { "type": "Label", "label": "test valve:" },
          { "type": "Button", "caption": "On", "onClick": "VALVE_ValveOn($id);"},
          { "type": "Button", "caption": "Off", "onClick": "VALVE_ValveOff($id);"},
 
