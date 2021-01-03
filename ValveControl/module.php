@@ -35,7 +35,7 @@
             echo $this->InstanceID;
 		}
 		
-		public function ValveOn()
+		public function ValveOff()
 		{
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
 			//IPS_LogMessage('Heating', $ValveID ."\n"); 
