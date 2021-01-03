@@ -10,7 +10,7 @@
 			$this->RegisterPropertyInteger('ValveOpenDelay',60);
 			$this->RegisterPropertyInteger('ValveCloseDelay',60);
 			$this->RegisterPropertyInteger('Seconds',10);
-			$this->RegisterPropertyInteger('ValveID', 0);
+			$this->RegisterPropertyInteger('ValveId', 0);
 
 		}
 
@@ -30,7 +30,7 @@
 			$StatusId = $this->RegisterVariableString('Status', 'Status', '', 2);
 		}
 
-		
+
 		public function MeineErsteEigeneFunktion() {
 			//IPS_LogMessage('Valve Control', 'Valve Control mijn fun');
             echo $this->InstanceID;
@@ -52,7 +52,9 @@
 
 		public function Scan()
 		{
+			echo $ValveId;
 			IPS_LogMessage('ValveDevice', 'Hello Semaphore in Scan');
+
 	
 		}	
 	}
