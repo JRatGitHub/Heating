@@ -13,7 +13,7 @@
 
             {
                 "name": "HeatRequestID",
-                "type": "SelectInstance",
+                "type": "SelectVariable",
                 "caption": "Heat Request ID"
             }
         ],
