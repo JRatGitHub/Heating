@@ -32,12 +32,7 @@
 
 		}
 
-
-		public function MeineErsteEigeneFunktion() {
-			//IPS_LogMessage('Valve Control', 'Valve Control mijn fun');
-            echo $this->InstanceID;
-		}
-		
+	
 		public function ValveOff()
 		{
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
@@ -57,7 +52,7 @@
 		{
 			$ValveLink = $this->ReadPropertyInteger('ValveID');
 			echo $ValveLink;
-			echo $this->ReadPropertyInteger('HeatRequestID');
+			//echo $this->ReadPropertyInteger('HeatRequestID');
 		}
 
 		public function Scan()
