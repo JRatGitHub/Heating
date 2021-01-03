@@ -40,6 +40,12 @@
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
 			//IPS_LogMessage('Heating', $ValveID ."\n"); 
 			echo  "Hallo Wereld.";
+		}
 
+		public function ValveOn()
+		{
+			//$ValveID = $this->ReadPropertyInteger('ValveID');
+			//IPS_LogMessage('Heating', $ValveId ."\n"); 
+			HM_WriteValueBoolean($ValveID,'STATE',True);
 		}
 	}
