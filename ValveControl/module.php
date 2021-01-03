@@ -39,15 +39,14 @@
 		{
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
 			//IPS_LogMessage('Heating', $ValveID ."\n"); 
-			echo  "Hallo Wereld.";
+			HM_WriteValueBoolean($ValveID,'STATE',False);
 		}
 
 		public function ValveOn()
 		{
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
 			//IPS_LogMessage('Heating', $ValveId ."\n"); 
-			HM_Write
-			ValueBoolean($ValveID,'STATE',True);
+			HM_WriteValueBoolean($ValveID,'STATE',True);
 		}
 
 		public function Scan()
