@@ -11,6 +11,7 @@
 			$this->RegisterPropertyInteger('ValveCloseDelay',60);
 			$this->RegisterPropertyInteger('Seconds',10);
 			$this->RegisterPropertyInteger('ValveID', 0);
+			$this->RegisterPropertyInteger('HeatRequestID', 0);
 
 		}
 
