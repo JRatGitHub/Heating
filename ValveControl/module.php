@@ -55,6 +55,8 @@
 
 		public function Check_HeatRequestID()
 		{
+			$ValveLink = $this->ReadPropertyInteger('ValveID');
+			echo $ValveLink;
 			echo $this->ReadPropertyInteger('HeatRequestID');
 		}
 
