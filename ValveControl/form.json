@@ -24,7 +24,7 @@
          {
             "type": "Button",
             "label": "Suchen",
-            "onClick": "print_r(BTP_Scan($id));"
+            "onClick": "print_r(VALVE_Scan($id));"
           }
           ],
 

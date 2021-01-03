@@ -30,6 +30,7 @@
 			$StatusId = $this->RegisterVariableString('Status', 'Status', '', 2);
 		}
 
+		
 		public function MeineErsteEigeneFunktion() {
 			//IPS_LogMessage('Valve Control', 'Valve Control mijn fun');
             echo $this->InstanceID;
