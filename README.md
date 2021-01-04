@@ -3,7 +3,7 @@
 Folgende Module beinhaltet das Heating Repository:
 
 - __ValveControl__ ([Dokumentation](ValveControl))  
-	Kurze Beschreibung des Moduls.
+	Module to control a valve used for floorheating.
 
 - __PWMControl__ ([Dokumentation](PWMControl))  
 	Kurze Beschreibung des Moduls.
