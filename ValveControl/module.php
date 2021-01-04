@@ -27,7 +27,7 @@
 
 			$ValveRequestID = $this->RegisterVariableBoolean('ValveRequest', 'Valve Request');
 			$HeatRequestID = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
-			$ValveID= $this->RegisterVariableBoolean('ValveStatus', 'Valve');
+			$ValveID = $this->RegisterVariableBoolean('ValveStatus', 'Valve');
 			$StatusID = $this->RegisterVariableString('Status', 'Status', '', 2);
 
 		}
@@ -60,7 +60,12 @@
 			$ValveLink = $this->ReadPropertyInteger('ValveID');
 			echo $ValveLink;
 			IPS_LogMessage('ValveDevice', 'Hello Semaphore in Scan');
-
-	
 		}	
+
+		public function ValveRequestAction()
+		{
+
+		}
+
+		
 	}
