@@ -1,6 +1,6 @@
 # ValveControl
-Module to control valves using for central floorheating.
-These valve needs time to open en close. This module is written to take care of this opening and closing time.
+Module to control valves used for floorheating.
+These valve needs time to open and close. This module is written to take care of this opening and closing time.
 It is using the opening and closing time to delay the control the Central Heating to start burning.
 
 ### Inhaltsverzeichnis
