@@ -1,9 +1,23 @@
 {
     "elements": [
-            { "type": "Label", "label": "Valve:" },
-            { "type": "NumberSpinner", "name": "ValveOpenDelay", "caption": "time to open", "suffix": "seconds"},
-            { "type": "NumberSpinner", "name": "ValveCloseDelay", "caption": "time to close", "suffix": "seconds"},
-           
+            {   
+                "type": "Label",
+                "label": "Valve:" 
+            },
+
+            {
+                "type": "NumberSpinner",
+                "name": "ValveOpenDelay", 
+                "caption": "time to open", 
+                "suffix": "seconds"
+            },
+
+            {   
+                "type": "NumberSpinner", 
+                "name": "ValveCloseDelay", 
+                "caption": "time to close", 
+                "suffix": "seconds"
+            },
             
             {
                 "name": "ValveID",
@@ -18,11 +32,12 @@
                 "onChange": "VALVE_Check_HeatRequestID($id);"
             }
         ],
+
     "actions": [
                   
         { "type": "Label", "label": "test valve:" },
-         { "type": "Button", "caption": "On", "onClick": "VALVE_ValveOn($id);"},
-         { "type": "Button", "caption": "Off", "onClick": "VALVE_ValveOff($id);"},
+        { "type": "Button", "caption": "On", "onClick": "VALVE_ValveOn($id);"},
+        { "type": "Button", "caption": "Off", "onClick": "VALVE_ValveOff($id);"},
 
          {
             "type": "Button",
