@@ -6,11 +6,17 @@
 			//Never delete this line!
 			parent::Create();
 
+			 //Properties
 			$this->RegisterPropertyInteger('ValveOpenDelay',60);
 			$this->RegisterPropertyInteger('ValveCloseDelay',60);
 			$this->RegisterPropertyInteger('Seconds',10);
 			$this->RegisterPropertyInteger('ValveID', 0);
 			$this->RegisterPropertyInteger('HeatRequestID', 0);
+
+
+        	//Timers
+        	//$this->RegisterTimer('OffTimer', 0, "THL_Stop(\$_IPS['TARGET']);");
+        	$this->RegisterTimer('UpdateRemainingTimer', 0, "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
 
 		}
 
@@ -29,7 +35,6 @@
 			$HeatRequestID = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
 			$ValveID = $this->RegisterVariableBoolean('ValveStatus', 'Valve');
 			$StatusID = $this->RegisterVariableString('Status', 'Status', '', 2);
-
 		}
 
 	
@@ -67,5 +72,5 @@
 
 		}
 
-		
+
 	}
