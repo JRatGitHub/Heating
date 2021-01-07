@@ -23,7 +23,16 @@
 
         	//Timers
         	//$this->RegisterTimer('OffTimer', 0, "THL_Stop(\$_IPS['TARGET']);");
-        	$this->RegisterTimer('UpdateRemainingTimer', 100, "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
+			$this->RegisterTimer('UpdateRemainingTimer', 0, "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
+			
+			//Scripts
+			$scriptID = $this->RegisterScript("TextSkript", "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
+
+			$eid = IPS_CreateEvent(0);        //triggered event
+			IPS_SetEventTrigger($eid, 1, $ValveRequestID); //On change of variable with ID 15 754
+			IPS_SetParent($eid, $_IPS['SELF']); //Assigning the event
+			IPS_SetEventActive($eid, true); 
+
 
 		}
 
@@ -37,8 +46,6 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
-
-			
 		}
 
 	
