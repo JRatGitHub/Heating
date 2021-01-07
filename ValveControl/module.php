@@ -13,6 +13,13 @@
 			$this->RegisterPropertyInteger('ValveID', 0);
 			$this->RegisterPropertyInteger('HeatRequestID', 0);
 
+			
+			$ValveRequestID = $this->RegisterVariableBoolean('ValveRequest', 'Valve Request');
+			$HeatRequestID = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
+			$ValveID = $this->RegisterVariableBoolean('ValveStatus', 'Valve');
+			$StatusID = $this->RegisterVariableString('Status', 'Status', '', 2);
+			
+
 
         	//Timers
         	//$this->RegisterTimer('OffTimer', 0, "THL_Stop(\$_IPS['TARGET']);");
@@ -31,10 +38,7 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-			$ValveRequestID = $this->RegisterVariableBoolean('ValveRequest', 'Valve Request');
-			$HeatRequestID = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
-			$ValveID = $this->RegisterVariableBoolean('ValveStatus', 'Valve');
-			$StatusID = $this->RegisterVariableString('Status', 'Status', '', 2);
+			
 		}
 
 	
