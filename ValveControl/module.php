@@ -13,7 +13,7 @@
 			$this->RegisterPropertyInteger('ValveID', 0);
 			$this->RegisterPropertyInteger('HeatRequestID', 0);
 
-			
+
 			$ValveRequestID = $this->RegisterVariableBoolean('ValveRequest', 'Valve Request');
 			$HeatRequestID = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
 			$ValveID = $this->RegisterVariableBoolean('ValveStatus', 'Valve');
@@ -23,7 +23,7 @@
 
         	//Timers
         	//$this->RegisterTimer('OffTimer', 0, "THL_Stop(\$_IPS['TARGET']);");
-        	$this->RegisterTimer('UpdateRemainingTimer', 0, "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
+        	$this->RegisterTimer('UpdateRemainingTimer', 100, "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
 
 		}
 
@@ -73,7 +73,7 @@
 
 		public function ValveRequestAction()
 		{
-
+			IPS_LogMessage('Valve', 'RequestAction triggered');
 		}
 
 
