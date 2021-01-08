@@ -28,10 +28,10 @@
 			//Scripts
 			$scriptID = $this->RegisterScript("TextSkript", "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
 
-			$eid = IPS_CreateEvent(0);        //triggered event
-			IPS_SetEventTrigger($eid, 1, $ValveRequestID); //On change of variable with ID 15 754
-			IPS_SetParent($eid, $_IPS['SELF']); //Assigning the event
-			IPS_SetEventActive($eid, true); 
+			//$eid = IPS_CreateEvent(0);        //triggered event
+			//IPS_SetEventTrigger($eid, 1, $ValveRequestID); //On change of variable with ID 15 754
+			//IPS_SetParent($eid, $_IPS['SELF']); //Assigning the event
+			//IPS_SetEventActive($eid, true); 
 		}
 
 		public function Destroy()
