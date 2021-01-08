@@ -50,7 +50,7 @@
 
 			$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VM_UPDATE);
 			$this->RegisterReference($this->GetIDForIdent('ValveRequest')); 
-
+			IPS_LogMessage('Valve:Register', $this->GetIDForIdent('ValveRequest'));
 
 		}
 
