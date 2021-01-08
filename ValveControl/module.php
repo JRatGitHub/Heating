@@ -48,7 +48,7 @@
 			//$this->RegisterMessage($ValveRequestID, VM_UPDATE);
 			//$this->RegisterReference($ValveRequestID);
 
-			$this->RegisterMessage($this->ReadPropertyInteger('ValveRequest')), VM_UPDATE);
+			$this->RegisterMessage($this->ReadPropertyInteger('ValveRequest'), VM_UPDATE);
 			$this->RegisterReference($this->ReadPropertyInteger('ValveRequest')); 
 
 
