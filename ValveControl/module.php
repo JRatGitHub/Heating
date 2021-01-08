@@ -45,10 +45,11 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-		//	$this->RegisterMessage($triggerID, VM_UPDATE);
-		//	$this->RegisterReference($triggerID);
-			$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VM_UPDATE);
-			$this->RegisterReference($this->GetIDForIdent('ValveRequest')); 
+			$this->RegisterMessage($ValveRequestID, VM_UPDATE);
+			$this->RegisterReference($ValveRequestID);
+
+		//	$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VM_UPDATE);
+		//	$this->RegisterReference($this->GetIDForIdent('ValveRequest')); 
 
 		}
 
