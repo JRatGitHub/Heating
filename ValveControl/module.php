@@ -47,7 +47,8 @@
 
 		//	$this->RegisterMessage($triggerID, VM_UPDATE);
 		//	$this->RegisterReference($triggerID);
-			$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VM_UPDATE); 
+			$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VM_UPDATE);
+			$this->RegisterReference($this->GetIDForIdent('ValveRequest')); 
 
 		}
 
