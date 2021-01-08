@@ -33,9 +33,7 @@
 			IPS_SetParent($eid, $_IPS['SELF']); //Assigning the event
 			IPS_SetEventActive($eid, true); 
 
-
-		}
-
+*
 		public function Destroy()
 		{
 			//Never delete this line!
@@ -46,9 +44,19 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
+
+		//	$this->RegisterMessage($triggerID, VM_UPDATE);
+		//	$this->RegisterReference($triggerID);
+			$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VM_UPDATE); 
+
 		}
 
-	
+		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) {
+ 
+			IPS_LogMessage("MessageSink", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
+		}
+
+
 		public function ValveOff()
 		{
 			//$ValveID = $this->ReadPropertyInteger('ValveID');
