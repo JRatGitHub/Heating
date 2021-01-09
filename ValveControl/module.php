@@ -56,7 +56,12 @@
 
 		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) 
 		{
- 			IPS_LogMessage("MessageSink", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
+			 IPS_LogMessage("MessageSink", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
+			 
+			 if ($Message == VM_UPDATE) {
+				IPS_LogMessage("MessageSink", "Updated");
+				SetValueString($this->GetIDForIdent('Status'),"Valve opening...");
+			 }
 		}
 
 
