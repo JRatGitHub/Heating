@@ -6,7 +6,7 @@ Folgende Module beinhaltet das Heating Repository:
 	Module to control a valve used for floorheating.
 
 - __PWMControl__ ([Dokumentation](PWMControl))  
-	Kurze Beschreibung des Moduls.
+	Module to control a valve by using Pulse Width Modulation.
 
 - __PIDControl__ ([Dokumentation](PIDControl))  
 	Kurze Beschreibung des Moduls.
