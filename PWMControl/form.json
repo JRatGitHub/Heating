@@ -1,5 +1,17 @@
 {
-    "elements": [],
+    "elements": [
+        {   
+            "type": "Label",
+            "label": "Enter ip of ztatz server:" 
+        },
+
+        {
+            "type": "NumberSpinner",
+            "name": "ValveOpenDelay", 
+            "caption": "step size", 
+            "suffix": "seconds"
+        }
+    ],
     "actions": [],
     "status": []
 }
