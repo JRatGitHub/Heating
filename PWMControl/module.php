@@ -32,11 +32,13 @@
 			$this->RegisterReference($this->GetIDForIdent('PWMSetpoint')); 
 		}
 
-		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) 
-		{
+		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) {
 			IPS_LogMessage("PWMControl", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
 			if ($Message == VM_UPDATE) {
-				IPS_LogMessage("PWMControl:MessageSink", "Updated");
+				//IPS_LogMessage("PWMControl:MessageSink", "Updated");
+				if ($SenderID == $this->GetIDForIdent('PWMSetpoint')){
+					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint Updated");
+				}
 
 			}
 		}
