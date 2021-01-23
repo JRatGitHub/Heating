@@ -61,6 +61,9 @@
 			 
 			 if ($Message == VM_UPDATE) {
 				IPS_LogMessage("MessageSink", "Updated");
+				if ($SenderID != $this->ReadPropertyInteger('ValveRequest')){
+					IPS_LogMessage("MessageSink", "ValveRequest Updated");
+				}
 				SetValueString($this->GetIDForIdent('Status'),"Valve opening...");
 			 }
 		}
