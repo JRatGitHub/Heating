@@ -12,8 +12,8 @@
 			 $this->RegisterPropertyInteger('ValveID', 0);
 
 			 //Variables
-			 $PWMSetpoint = $this->RegisterVariableInteger('PWMSetpoint', 'PWM Setpoint', '~Intensity.100',0);
-			 $PWMOutput = $this->RegisterVariableBoolean('PWMOutput', 'Output');
+			 $PWMSetpoint = $this->RegisterVariableInteger('PWMSetpoint', 'Setpoint', '~Intensity.100',0);
+			 $PWMOutput = $this->RegisterVariableBoolean('PWMOutput', 'Output','Radiator');
 
 		}
 
