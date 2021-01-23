@@ -16,8 +16,8 @@
 			 $PWMOutput = $this->RegisterVariableBoolean('PWMOutput', 'Output');
 
 			 //Timers
-			$this->RegisterTimer('OpenTimer', 0, "VALVE_OpenTimeEnded(\$_IPS['TARGET']);");
-			$this->RegisterTimer('ClosedTimer', 0, "VALVE_CalculatePWM(\$_IPS['TARGET']);");
+			$this->RegisterTimer('OpenTimer', 0, "PWM_OpenTimeEnded(\$_IPS['TARGET']);");
+			$this->RegisterTimer('ClosedTimer', 0, "PWM_CalculatePWM(\$_IPS['TARGET']);");
 		}
 
 		public function Destroy()
