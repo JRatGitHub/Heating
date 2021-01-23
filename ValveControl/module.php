@@ -65,14 +65,8 @@
 			IPS_SetHidden($id, true);
 			IPS_SetEventScript($id, "\$id = \$_IPS['TARGET'];\n$script;");
 		
-		//	if (!IPS_EventExists($id)) throw new Exception("Ident with name $ident is used for wrong object type");
-		
-			//if (!($interval > 0)) {
-			//  IPS_SetEventCyclic($id, 0, 0, 0, 0, 1, 1);
-			//  IPS_SetEventActive($id, false);
-		//	} else {
-		//	  IPS_SetEventCyclic($id, 0, 0, 0, 0, 1, $interval);
-			  IPS_SetEventActive($id, true);
+
+			IPS_SetEventActive($id, true);
 		//	}
 		  }
 
