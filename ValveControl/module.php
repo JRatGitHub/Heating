@@ -18,6 +18,7 @@
 			$HeatRequestID = $this->RegisterVariableBoolean('HeatRequest', 'Heat Request');
 			$ValveID = $this->RegisterVariableBoolean('ValveStatus', 'Valve');
 			$StatusID = $this->RegisterVariableString('Status', 'Status', '', 2);
+			$OpenTimeID = $this->RegisterVariableInteger('OpenTime', 'Open time', 'Minuten',0);
 			
 
 
@@ -158,7 +159,8 @@
 		{
 			//$ValveLink = $this->ReadPropertyInteger('ValveID');
 			//echo $ValveLink;
-			IPS_LogMessage('MessageSink', 'RestValveOpenCounter triggered');
+			IPS_LogMessage('MessageSink', 'ResetValveOpenCounter triggered');
+			SetValueInteger($this->GetIDForIdent('OpenTime'),-1);
 		}	
 
 		public function ValveRequestAction()
