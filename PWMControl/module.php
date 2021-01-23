@@ -27,4 +27,8 @@
 			parent::ApplyChanges();
 		}
 
+
+		protected function SetPWM($Setpoint){
+			IPS_LogMessage("PWMControl", "SetPWM triggerd with setpoint: ".$Setpoint);
+		}
 	}
