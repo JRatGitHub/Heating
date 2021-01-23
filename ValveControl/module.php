@@ -102,7 +102,7 @@
 
 		public function StartValveClosing()
 		{
-			IPS_LogMessage("MessageSink", "StartValveOpening triggered");
+			IPS_LogMessage("Valve", "StartValveOpening triggered");
 			
 			//Disable ClosingTimer
 			$this->SetTimerInterval('ClosingTimer', 0);
@@ -112,7 +112,7 @@
 
 		public function StartValveOpening()
 		{
-			IPS_LogMessage("MessageSink", "StartValveOpening triggered");
+			IPS_LogMessage("Valve", "StartValveOpening triggered");
 			
 			//Disable OpeningTimer
 			$this->SetTimerInterval('OpeningTimer', 0);
@@ -146,7 +146,7 @@
 		{
 			//$ValveLink = $this->ReadPropertyInteger('ValveID');
 			//echo $ValveLink;
-			IPS_LogMessage('MessageSink', 'ResetValveOpenCounter triggered');
+			IPS_LogMessage('Valve', 'ResetValveOpenCounter triggered');
 			SetValueInteger($this->GetIDForIdent('OpenTime'),GetValueInteger($this->GetIDForIdent('OpenTime'))+1);
 		}	
 
@@ -154,7 +154,7 @@
 		{
 			//$ValveLink = $this->ReadPropertyInteger('ValveID');
 			//echo $ValveLink;
-			IPS_LogMessage('MessageSink', 'ResetValveOpenCounter triggered');
+			IPS_LogMessage('Valve', 'ResetValveOpenCounter triggered');
 			SetValueInteger($this->GetIDForIdent('OpenTime'),0);
 		}	
 

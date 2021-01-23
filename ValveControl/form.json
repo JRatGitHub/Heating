@@ -37,14 +37,9 @@
                   
         { "type": "Label", "label": "test valve:" },
         { "type": "Button", "caption": "On", "onClick": "VALVE_ValveOn($id);"},
-        { "type": "Button", "caption": "Off", "onClick": "VALVE_ValveOff($id);"},
-
-         {
-            "type": "Button",
-            "label": "Suchen",
-            "onClick": "print_r(VALVE_Scan($id));"
-          }
-          ],
+        { "type": "Button", "caption": "Off", "onClick": "VALVE_ValveOff($id);"}
+          
+    ],
 
     "status": []
 }
