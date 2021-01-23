@@ -107,6 +107,7 @@
 			//Disable ClosingTimer
 			$this->SetTimerInterval('ClosingTimer', 0);
 			SetValueString($this->GetIDForIdent('Status'),"Valve closed");
+			SetValueBoolean($this->GetIDForIdent('ValveStatus'),False);
 		}
 
 		public function StartValveOpening()
@@ -116,6 +117,7 @@
 			//Disable OpeningTimer
 			$this->SetTimerInterval('OpeningTimer', 0);
 			SetValueString($this->GetIDForIdent('Status'),"Valve open");
+			SetValueBoolean($this->GetIDForIdent('ValveStatus'),True);
 		}
 
 		public function ValveOff()
