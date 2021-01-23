@@ -151,7 +151,7 @@
 		{
 			//$ValveLink = $this->ReadPropertyInteger('ValveID');
 			//echo $ValveLink;
-			IPS_LogMessage('Valve', 'ResetValveOpenCounter triggered');
+			IPS_LogMessage('Valve', 'IncrementValveOpenCounter triggered');
 			SetValueInteger($this->GetIDForIdent('OpenTime'),GetValueInteger($this->GetIDForIdent('OpenTime'))+1);
 		}	
 

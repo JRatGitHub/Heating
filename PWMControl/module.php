@@ -55,7 +55,7 @@
 			$this->SetTimerInterval('OpenTimer',0);
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
 			$Setpoint = GetValueInteger($this->GetIDForIdent('PWMSetpoint'));
-			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * 100-$Setpoint;
+			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * (100-$Setpoint);
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			$this->SetTimerInterval('ClosedTimer', $duration * 1000);
 
@@ -76,6 +76,7 @@
 		protected function CalculatePWM($Setpoint){
 			IPS_LogMessage("PWMControl", "CalculatePWM triggered with setpoint: ".$Setpoint);
 		}
+		
 		protected function SetPWM($Setpoint){
 			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: ".$Setpoint);
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
