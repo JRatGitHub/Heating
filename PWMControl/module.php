@@ -29,6 +29,6 @@
 
 
 		protected function SetPWM($Setpoint){
-			IPS_LogMessage("PWMControl", "SetPWM triggerd with setpoint: ".$Setpoint);
+			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: ".$Setpoint);
 		}
 	}
