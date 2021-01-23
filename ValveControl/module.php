@@ -24,15 +24,16 @@
         	//Timers
 			$this->RegisterTimer('OpeningTimer', 0, "VALVE_StartValveOpening(\$_IPS['TARGET']);");
 			$this->RegisterTimer('ClosingTimer', 0, "VALVE_StartValveClosing(\$_IPS['TARGET']);");
-			
+
 			//$this->RegisterTimer('UpdateRemainingTimer', 0, "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
 			
 			//Scripts
 			//$scriptID = $this->RegisterScript("TextSkript", "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
 
-			//$eid = IPS_CreateEvent(0);        //triggered event
+			$eid = IPS_CreateEvent(1);        //triggered event
 			//IPS_SetEventTrigger($eid, 1, $ValveRequestID); //On change of variable with ID 15 754
-			//IPS_SetParent($eid, $_IPS['SELF']); //Assigning the event
+			IPS_SetParent($eid,$this->InstanceID); //Assigning the event
+			IPS_SetEventCyclicTimeFrom($eid, 0, 0, 0);
 			//IPS_SetEventActive($eid, true); 
 		}
 
@@ -47,12 +48,9 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-			//$this->RegisterMessage($ValveRequestID, VM_UPDATE);
-			//$this->RegisterReference($ValveRequestID);
-
 			$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VM_UPDATE);
 			$this->RegisterReference($this->GetIDForIdent('ValveRequest')); 
-			IPS_LogMessage('Valve:Register', $this->GetIDForIdent('ValveRequest'));
+			//IPS_LogMessage('Valve:Register', $this->GetIDForIdent('ValveRequest'));
 
 		}
 
