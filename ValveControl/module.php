@@ -65,11 +65,13 @@
 					IPS_LogMessage("MessageSink", "ValveRequest Updated");
 					if (GetValueBoolean($this->GetIDForIdent('ValveRequest'))==TRUE){
 						IPS_LogMessage("MessageSink", "ValveRequest is Open");
+						SetValueString($this->GetIDForIdent('Status'),"Valve opening ...");
 					} else {
 						IPS_LogMessage("MessageSink", "ValveRequest is close");
+						SetValueString($this->GetIDForIdent('Status'),"Valve closing ...");
 					}
 				}
-				SetValueString($this->GetIDForIdent('Status'),"Valve opening...");
+				//SetValueString($this->GetIDForIdent('Status'),"Valve opening...");
 			 }
 		}
 
