@@ -7,12 +7,14 @@
 			parent::Create();
 
 			 //Properties
-			 $this->RegisterPropertyInteger('CycleTime', 150);
+			 $this->RegisterPropertyInteger('CycleTime', 1500);
 			 $this->RegisterPropertyInteger('PWMsetpointID', 0);
 			 $this->RegisterPropertyInteger('ValveID', 0);
 
 			 //Variables
 			 $PWMSetpoint = $this->RegisterVariableInteger('PWMSetpoint', 'PWM Setpoint', '~Intensity.100',0);
+			 $ValveID = $this->RegisterVariableBoolean('ValveStatus', 'Valve');
+
 		}
 
 		public function Destroy()
@@ -35,7 +37,7 @@
 			IPS_LogMessage("PWMControl", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
 			if ($Message == VM_UPDATE) {
 				IPS_LogMessage("PWMControl:MessageSink", "Updated");
-				
+
 			}
 		}
 
