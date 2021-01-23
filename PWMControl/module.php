@@ -43,7 +43,7 @@
 					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint Updated");
 					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint old value:".$Data[2] ." %");
 					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint new value:".$Data[0] ." %");
-
+					SetPWM($Data[0]);
 
 				}
 
