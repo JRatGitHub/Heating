@@ -7,6 +7,7 @@
 			parent::Create();
 
 			 //Properties
+			 $this->RegisterPropertyInteger('PWMsetpointID', 0);
 			 $this->RegisterPropertyInteger('ValveID', 0);
 		}
 
