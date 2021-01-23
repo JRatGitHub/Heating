@@ -79,7 +79,7 @@
 					IPS_LogMessage("MessageSink", "ValveRequest Updated");
 					if (GetValueBoolean($this->GetIDForIdent('ValveRequest'))==TRUE){
 						IPS_LogMessage("MessageSink", "ValveRequest is Open");
-						$this->ValveOn;
+						$this->VALVE_ValveOn;
 						SetValueString($this->GetIDForIdent('Status'),"Valve opening ...");
 						//Start OpeningTimer
 						$duration = $this->ReadPropertyInteger('ValveOpenDelay');
@@ -87,7 +87,7 @@
 						$this->SetTimerInterval('OpenTimeCounter', 60 * 1000);
 					} else {
 						IPS_LogMessage("MessageSink", "ValveRequest is close");
-						$this->ValveOff;
+						$this->VALVE_ValveOff;
 						SetValueString($this->GetIDForIdent('Status'),"Valve closing ...");
 						//Start ClosingTimer
 						$duration = $this->ReadPropertyInteger('ValveCloseDelay');
