@@ -54,7 +54,7 @@
 		protected function CalculatePWM($Setpoint){
 			IPS_LogMessage("PWMControl", "CalculatePWM triggered with setpoint: ".$Setpoint);
 		}
-		protected function SetPWM($Setpoint){
+		public function SetPWM($Setpoint){
 			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: ".$Setpoint);
 			$duration = $this->ReadPropertyInteger('CycleTime') * $Setpoint;
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . "Sec.");
