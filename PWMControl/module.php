@@ -34,7 +34,8 @@
 		{
 			IPS_LogMessage("PWMControl", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
 			if ($Message == VM_UPDATE) {
-				IPS_LogMessage("MessageSink", "Updated");
+				IPS_LogMessage("PWMControl:MessageSink", "Updated");
+				
 			}
 		}
 
