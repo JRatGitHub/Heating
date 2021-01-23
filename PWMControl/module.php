@@ -17,7 +17,7 @@
 
 			 //Timers
 			$this->RegisterTimer('OpenTimer', 0, "PWM_OpenTimeEnded(\$_IPS['TARGET']);");
-			$this->RegisterTimer('ClosedTimer', 0, "PWM_CalculatePWM(\$_IPS['TARGET']);");
+			$this->RegisterTimer('ClosedTimer', 0, "PWM_ClosedTimeEnded(\$_IPS['TARGET']);");
 		}
 
 		public function Destroy()
@@ -61,6 +61,16 @@
 
 		}
 
+		public function ClosedTimeEnded(){
+			IPS_LogMessage("PWMControl", "ClosedTimeEnded triggered.");
+			$this->SetTimerInterval('ClosedTimer',0);
+			SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
+			$Setpoint = GetValueInteger($this->GetIDForIdent('PWMSetpoint'));
+			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
+			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
+			$this->SetTimerInterval('OpenTimer', $duration * 1000);
+
+		}
 
 
 		protected function CalculatePWM($Setpoint){
