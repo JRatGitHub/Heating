@@ -50,7 +50,7 @@
 			}
 		}
 
-		protected function OpenTimeEnded(){
+		public function OpenTimeEnded(){
 			IPS_LogMessage("PWMControl", "OpenTimeEnded triggered.");
 			$this->SetTimerInterval('OpenTimer',0);
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
