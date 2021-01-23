@@ -10,6 +10,12 @@
             "name": "ValveOpenDelay", 
             "caption": "step size", 
             "suffix": "seconds"
+        },
+
+        {
+            "name": "ValveID",
+            "type": "SelectInstance",
+            "caption": "Valve ID"
         }
     ],
     "actions": [],
