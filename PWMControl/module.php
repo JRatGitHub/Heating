@@ -56,7 +56,7 @@
 		}
 		public function SetPWM($Setpoint){
 			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: ".$Setpoint);
-			$duration = $this->ReadPropertyInteger('CycleTime') * $Setpoint;
+			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . "Sec.");
 			//$this->SetTimerInterval('OpenTimer', $duration * 1000);
 
