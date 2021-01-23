@@ -54,7 +54,7 @@
 			IPS_LogMessage("PWMControl", "OpenTimeEnded triggered.");
 			$this->SetTimerInterval('OpenTimer',0);
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
-			$Setpoint = GetValueInteger($this->GetIDForIdent('PWMSetpoint'))
+			$Setpoint = GetValueInteger($this->GetIDForIdent('PWMSetpoint'));
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * 100-$Setpoint;
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			$this->SetTimerInterval('ClosedTimer', $duration * 1000);
