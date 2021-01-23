@@ -22,7 +22,9 @@
 
 
         	//Timers
-        	$this->RegisterTimer('OpeningTimer', 0, "VALVE_StartValveOpening(\$_IPS['TARGET']);");
+			$this->RegisterTimer('OpeningTimer', 0, "VALVE_StartValveOpening(\$_IPS['TARGET']);");
+			$this->RegisterTimer('ClosingTimer', 0, "VALVE_StartValveClosing(\$_IPS['TARGET']);");
+			
 			//$this->RegisterTimer('UpdateRemainingTimer', 0, "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
 			
 			//Scripts
@@ -65,16 +67,28 @@
 					if (GetValueBoolean($this->GetIDForIdent('ValveRequest'))==TRUE){
 						IPS_LogMessage("MessageSink", "ValveRequest is Open");
 						SetValueString($this->GetIDForIdent('Status'),"Valve opening ...");
-						//Start OffTimer
+						//Start OpeningTimer
 						$duration = $this->ReadPropertyInteger('ValveOpenDelay');
 						$this->SetTimerInterval('OpeningTimer', $duration * 1000);
 
 					} else {
 						IPS_LogMessage("MessageSink", "ValveRequest is close");
 						SetValueString($this->GetIDForIdent('Status'),"Valve closing ...");
+						//Start ClosingTimer
+						$duration = $this->ReadPropertyInteger('ValveCloseDelay');
+						$this->SetTimerInterval('ClosingTimer', $duration * 1000);
 					}
 				}
 			 }
+		}
+
+		public function StartValveClosing()
+		{
+			IPS_LogMessage("MessageSink", "StartValveOpening triggered");
+			
+			//Disable ClosingTimer
+			$this->SetTimerInterval('ClosingTimer', 0);
+			SetValueString($this->GetIDForIdent('Status'),"Valve closed");
 		}
 
 		public function StartValveOpening()
@@ -83,6 +97,7 @@
 			
 			//Disable OpeningTimer
 			$this->SetTimerInterval('OpeningTimer', 0);
+			SetValueString($this->GetIDForIdent('Status'),"Valve open");
 		}
 
 		public function ValveOff()
