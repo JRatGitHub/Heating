@@ -67,7 +67,7 @@
 						SetValueString($this->GetIDForIdent('Status'),"Valve opening ...");
 						//Start OffTimer
 						$duration = $this->ReadPropertyInteger('ValveOpenDelay');
-						$this->SetTimerInterval('OffTimer', $duration * 1000);
+						$this->SetTimerInterval('OpeningTimer', $duration * 1000);
 
 					} else {
 						IPS_LogMessage("MessageSink", "ValveRequest is close");
