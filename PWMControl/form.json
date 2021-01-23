@@ -2,13 +2,13 @@
     "elements": [
         {   
             "type": "Label",
-            "label": "Enter ip of ztatz server:" 
+            "label": "PWM control of floorheating Enter ip of ztatz server:" 
         },
 
         {
             "type": "NumberSpinner",
-            "name": "StepSize", 
-            "caption": "step size", 
+            "name": "CycleTime", 
+            "caption": "Cycle time", 
             "suffix": "seconds"
         },
 

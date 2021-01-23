@@ -7,7 +7,8 @@
 			parent::Create();
 
 			 //Properties
-			 $this->RegisterPropertyInteger('StepSize', 0);
+			 $this->RegisterPropertyInteger('CycleTime', 150);
+			 $this->RegisterPropertyInteger('PWMsetpointID', 0);
 			 $this->RegisterPropertyInteger('ValveID', 0);
 		}
 
