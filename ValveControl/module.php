@@ -48,8 +48,8 @@
 			//$this->RegisterMessage($ValveRequestID, VM_UPDATE);
 			//$this->RegisterReference($ValveRequestID);
 
-			//$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VM_UPDATE);
-			$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VALVEREQUEST_UPDATE);
+			$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VM_UPDATE);
+			//$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VALVEREQUEST_UPDATE);
 			$this->RegisterReference($this->GetIDForIdent('ValveRequest')); 
 			IPS_LogMessage('Valve:Register', $this->GetIDForIdent('ValveRequest'));
 
