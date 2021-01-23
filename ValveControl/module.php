@@ -79,7 +79,7 @@
 					IPS_LogMessage("MessageSink", "ValveRequest Updated");
 					if (GetValueBoolean($this->GetIDForIdent('ValveRequest'))==TRUE){
 						IPS_LogMessage("MessageSink", "ValveRequest is Open");
-						HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
+						HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',True);
 						SetValueString($this->GetIDForIdent('Status'),"Valve opening ...");
 						//Start OpeningTimer
 						$duration = $this->ReadPropertyInteger('ValveOpenDelay');
@@ -87,7 +87,7 @@
 						$this->SetTimerInterval('OpenTimeCounter', 60 * 1000);
 					} else {
 						IPS_LogMessage("MessageSink", "ValveRequest is close");
-						HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',True);
+						HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
 						SetValueString($this->GetIDForIdent('Status'),"Valve closing ...");
 						//Start ClosingTimer
 						$duration = $this->ReadPropertyInteger('ValveCloseDelay');
@@ -107,7 +107,7 @@
 			//Disable ClosingTimer
 			$this->SetTimerInterval('ClosingTimer', 0);
 			SetValueString($this->GetIDForIdent('Status'),"Valve closed");
-			SetValueBoolean($this->GetIDForIdent('ValveStatus'),False);
+			SetValueBoolean($this->GetIDForIdent('HeatRequest'),False);
 		}
 
 		public function StartValveOpening()
@@ -117,7 +117,7 @@
 			//Disable OpeningTimer
 			$this->SetTimerInterval('OpeningTimer', 0);
 			SetValueString($this->GetIDForIdent('Status'),"Valve open");
-			SetValueBoolean($this->GetIDForIdent('ValveStatus'),True);
+			SetValueBoolean($this->GetIDForIdent('HeatRequest'),True);
 		}
 
 		public function ValveOff()
