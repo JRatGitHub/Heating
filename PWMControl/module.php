@@ -13,7 +13,7 @@
 
 			 //Variables
 			 $PWMSetpoint = $this->RegisterVariableInteger('PWMSetpoint', 'Setpoint', '~Intensity.100',0);
-			 $PWMOutput = $this->RegisterVariableBoolean('PWMOutput', 'Output','Valve');
+			 $PWMOutput = $this->RegisterVariableBoolean('PWMOutput', 'Output');
 
 		}
 
