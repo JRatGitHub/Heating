@@ -7,10 +7,14 @@
 
         {   
             "type": "Label",
-            "link": "https://knxshoponline.co.uk/content/Schneider/MTN6730-0001/MTN6730-0001_SW_2015_16_EN.pdf",
-            "caption": "page 64" 
+            "caption": "https://knxshoponline.co.uk/content/Schneider/MTN6730-0001/MTN6730-0001_SW_2015_16_EN.pdf"
         },
         
+        {   
+            "type": "Label",
+            "caption": "page 64" 
+        },
+
         {
             "type": "NumberSpinner",
             "name": "CycleTime", 
