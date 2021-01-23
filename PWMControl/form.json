@@ -7,9 +7,15 @@
 
         {
             "type": "NumberSpinner",
-            "name": "ValveOpenDelay", 
+            "name": "StepSize", 
             "caption": "step size", 
             "suffix": "seconds"
+        },
+
+        {
+            "name": "PWMsetpointID",
+            "type": "SelectVariable",
+            "caption": "PWM setpoint ID"
         },
 
         {
