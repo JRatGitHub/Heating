@@ -75,7 +75,7 @@
 			}
 		
 			IPS_SetName($id, $ident);
-			IPS_SetHidden($id, true);
+		//	IPS_SetHidden($id, true);
 			IPS_SetEventScript($id, "\$id = \$_IPS['TARGET'];\n$script;");
 		
 		//	if (!IPS_EventExists($id)) throw new Exception("Ident with name $ident is used for wrong object type");
