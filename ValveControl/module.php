@@ -85,7 +85,7 @@
 		//	} else {
 		//	  IPS_SetEventCyclic($id, 0, 0, 0, 0, 1, $interval);
 		//	  IPS_SetEventActive($id, true);
-			}
+		//	}
 		  }
 
 		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) 
