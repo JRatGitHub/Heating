@@ -5,6 +5,9 @@
 		{
 			//Never delete this line!
 			parent::Create();
+
+			 //Properties
+			 $this->RegisterPropertyInteger('ValveID', 0);
 		}
 
 		public function Destroy()
