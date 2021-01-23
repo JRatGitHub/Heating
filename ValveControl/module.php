@@ -65,6 +65,10 @@
 					if (GetValueBoolean($this->GetIDForIdent('ValveRequest'))==TRUE){
 						IPS_LogMessage("MessageSink", "ValveRequest is Open");
 						SetValueString($this->GetIDForIdent('Status'),"Valve opening ...");
+						//Start OffTimer
+						$duration = $this->ReadPropertyInteger('ValveOpenDelay');
+						$this->SetTimerInterval('OffTimer', $duration * 1000);
+
 					} else {
 						IPS_LogMessage("MessageSink", "ValveRequest is close");
 						SetValueString($this->GetIDForIdent('Status'),"Valve closing ...");
@@ -75,10 +79,10 @@
 
 		public function StartValveOpening()
 		{
-			//$ValveID = $this->ReadPropertyInteger('ValveID');
-			//IPS_LogMessage('Heating', $ValveID ."\n");
+			IPS_LogMessage("MessageSink", "StartValveOpening triggered");
 			
-			//HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
+			//Disable OpeningTimer
+			$this->SetTimerInterval('OpeningTimer', 0);
 		}
 
 		public function ValveOff()
