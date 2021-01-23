@@ -22,7 +22,7 @@
 
 
         	//Timers
-        	//$this->RegisterTimer('OffTimer', 0, "THL_Stop(\$_IPS['TARGET']);");
+        	$this->RegisterTimer('OpeningTimer', 0, "VALVE_StartValveOpening(\$_IPS['TARGET']);");
 			//$this->RegisterTimer('UpdateRemainingTimer', 0, "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
 			
 			//Scripts
@@ -49,7 +49,6 @@
 			//$this->RegisterReference($ValveRequestID);
 
 			$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VM_UPDATE);
-			//$this->RegisterMessage($this->GetIDForIdent('ValveRequest'), VALVEREQUEST_UPDATE);
 			$this->RegisterReference($this->GetIDForIdent('ValveRequest')); 
 			IPS_LogMessage('Valve:Register', $this->GetIDForIdent('ValveRequest'));
 
@@ -71,10 +70,16 @@
 						SetValueString($this->GetIDForIdent('Status'),"Valve closing ...");
 					}
 				}
-				//SetValueString($this->GetIDForIdent('Status'),"Valve opening...");
 			 }
 		}
 
+		public function StartValveOpening()
+		{
+			//$ValveID = $this->ReadPropertyInteger('ValveID');
+			//IPS_LogMessage('Heating', $ValveID ."\n");
+			
+			//HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
+		}
 
 		public function ValveOff()
 		{
