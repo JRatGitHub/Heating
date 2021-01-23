@@ -25,8 +25,18 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
+
+			$this->RegisterMessage($this->GetIDForIdent('PWMSetpoint'), VM_UPDATE);
+			$this->RegisterReference($this->GetIDForIdent('PWMSetpoint')); 
 		}
 
+		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) 
+		{
+			IPS_LogMessage("PWMControl", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
+			if ($Message == VM_UPDATE) {
+				IPS_LogMessage("MessageSink", "Updated");
+			}
+		}
 
 		protected function SetPWM($Setpoint){
 			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: ".$Setpoint);
