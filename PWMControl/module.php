@@ -50,6 +50,17 @@
 			}
 		}
 
+		protected function OpenTimeEnded(){
+			IPS_LogMessage("PWMControl", "OpenTimeEnded triggered.");
+			$this->SetTimerInterval('OpenTimer',0);
+			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
+			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * 100-$Setpoint;
+			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
+			$this->SetTimerInterval('ClosedTimer', $duration * 1000);
+
+		}
+
+
 
 		protected function CalculatePWM($Setpoint){
 			IPS_LogMessage("PWMControl", "CalculatePWM triggered with setpoint: ".$Setpoint);
@@ -57,8 +68,8 @@
 		protected function SetPWM($Setpoint){
 			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: ".$Setpoint);
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
-			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . "Sec.");
-			//$this->SetTimerInterval('OpenTimer', $duration * 1000);
-
+			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
+			$this->SetTimerInterval('OpenTimer', $duration * 1000);
+			SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
 		}
 	}
