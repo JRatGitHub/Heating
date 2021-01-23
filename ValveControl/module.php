@@ -20,26 +20,13 @@
 			$StatusID = $this->RegisterVariableString('Status', 'Status', '', 2);
 			$OpenTimeID = $this->RegisterVariableInteger('OpenTime', 'Open time', 'Minuten',0);
 			
-
-
         	//Timers
 			$this->RegisterTimer('OpeningTimer', 0, "VALVE_StartValveOpening(\$_IPS['TARGET']);");
 			$this->RegisterTimer('ClosingTimer', 0, "VALVE_StartValveClosing(\$_IPS['TARGET']);");
 
 
 			// events
-			$this->RegisterResetCounter('ResetCounter', 'VALVE_ResetValveOpenCounter($id)');
-			//$this->RegisterTimer('UpdateRemainingTimer', 0, "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
-			
-			//Scripts
-			//$scriptID = $this->RegisterScript("TextSkript", "VALVE_ValveRequestAction(\$_IPS['TARGET']);");
-
-			//$eid = IPS_CreateEvent(1);        //triggered event
-			//IPS_SetEventTrigger($eid, 1, $ValveRequestID); //On change of variable with ID 15 754
-			//IPS_SetParent($eid,$this->InstanceID); //Assigning the event
-		//	IPS_SetEventCyclicTimeFrom($eid, 0, 0, 0);
-			//IPS_SetEventActive($eid, true); 
-		//	IPS_SetEventScript($eid, "echo 'Verknüpftes Objekt:' . \$_IPS['TARGET'];");
+			$this->RegisterResetCounter('ResetCounter', 'VALVE_ResetValveOpenCounter($id)');	
 		}
 
 		public function Destroy()
@@ -75,7 +62,7 @@
 			}
 		
 			IPS_SetName($id, $ident);
-		//	IPS_SetHidden($id, true);
+			IPS_SetHidden($id, true);
 			IPS_SetEventScript($id, "\$id = \$_IPS['TARGET'];\n$script;");
 		
 		//	if (!IPS_EventExists($id)) throw new Exception("Ident with name $ident is used for wrong object type");
