@@ -23,6 +23,8 @@
         	//Timers
 			$this->RegisterTimer('OpeningTimer', 0, "VALVE_StartValveOpening(\$_IPS['TARGET']);");
 			$this->RegisterTimer('ClosingTimer', 0, "VALVE_StartValveClosing(\$_IPS['TARGET']);");
+			$this->RegisterTimer('OpenTimeCounter', 0, "VALVE_IncrementValveOpenCounter(\$_IPS['TARGET']);");
+
 
 
 			// events
@@ -64,10 +66,7 @@
 			IPS_SetName($id, $ident);
 			IPS_SetHidden($id, true);
 			IPS_SetEventScript($id, "\$id = \$_IPS['TARGET'];\n$script;");
-		
-
 			IPS_SetEventActive($id, true);
-		//	}
 		  }
 
 		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) 
@@ -84,6 +83,8 @@
 						//Start OpeningTimer
 						$duration = $this->ReadPropertyInteger('ValveOpenDelay');
 						$this->SetTimerInterval('OpeningTimer', $duration * 1000);
+						$this->SetTimerInterval('OpenTimeCounter', 2 * 1000);
+
 
 					} else {
 						IPS_LogMessage("MessageSink", "ValveRequest is close");
@@ -91,6 +92,9 @@
 						//Start ClosingTimer
 						$duration = $this->ReadPropertyInteger('ValveCloseDelay');
 						$this->SetTimerInterval('ClosingTimer', $duration * 1000);
+
+						$this->SetTimerInterval('OpenTimeCounter', 0);
+						
 					}
 				}
 			 }
@@ -136,6 +140,14 @@
 			//echo $this->ReadPropertyInteger('HeatRequestID');
 		}
 
+		public function IncrementValveOpenCounter()
+		{
+			//$ValveLink = $this->ReadPropertyInteger('ValveID');
+			//echo $ValveLink;
+			IPS_LogMessage('MessageSink', 'ResetValveOpenCounter triggered');
+			SetValueInteger($this->GetIDForIdent('OpenTime'),GetValueInteger($this->GetIDForIdent('OpenTime'))+1);
+		}	
+
 		public function ResetValveOpenCounter()
 		{
 			//$ValveLink = $this->ReadPropertyInteger('ValveID');
@@ -143,6 +155,7 @@
 			IPS_LogMessage('MessageSink', 'ResetValveOpenCounter triggered');
 			SetValueInteger($this->GetIDForIdent('OpenTime'),-1);
 		}	
+
 
 		public function ValveRequestAction()
 		{
