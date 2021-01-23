@@ -84,7 +84,7 @@
 			//  IPS_SetEventActive($id, false);
 		//	} else {
 		//	  IPS_SetEventCyclic($id, 0, 0, 0, 0, 1, $interval);
-		//	  IPS_SetEventActive($id, true);
+			  IPS_SetEventActive($id, true);
 		//	}
 		  }
 
