@@ -14,9 +14,11 @@
 
         {
             "name": "ValveID",
-            "type": "SelectInstance",
+            "type": "SelectVariable",
             "caption": "Valve ID"
         }
+
+
     ],
     "actions": [],
     "status": []
