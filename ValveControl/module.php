@@ -35,6 +35,7 @@
 			IPS_SetParent($eid,$this->InstanceID); //Assigning the event
 			IPS_SetEventCyclicTimeFrom($eid, 0, 0, 0);
 			//IPS_SetEventActive($eid, true); 
+			IPS_SetEventScript($eid, "echo 'Verknüpftes Objekt:' . \$_IPS['TARGET'];");
 		}
 
 		public function Destroy()
