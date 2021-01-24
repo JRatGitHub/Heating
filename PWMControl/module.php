@@ -58,7 +58,6 @@
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * (100-$Setpoint);
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			$this->SetTimerInterval('ClosedTimer', $duration * 1000);
-
 		}
 
 		public function ClosedTimeEnded(){
@@ -69,7 +68,6 @@
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			$this->SetTimerInterval('OpenTimer', $duration * 1000);
-
 		}
 
 
@@ -83,5 +81,6 @@
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			$this->SetTimerInterval('OpenTimer', $duration * 1000);
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
+			
 		}
 	}
