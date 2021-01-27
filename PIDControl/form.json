@@ -13,8 +13,8 @@
 
         {   
             "type": "NumberSpinner", 
-            "name": "ValveCloseDelay", 
-            "caption": "time to close", 
+            "name": "KI", 
+            "caption": "Ki", 
             "suffix": "seconds"
         },
         
