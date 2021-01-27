@@ -22,7 +22,7 @@
             "name": "ValveID",
             "type": "SelectInstance",
             "caption": "Valve ID"
-        },
+        }
 
     ],
     "actions": [],
