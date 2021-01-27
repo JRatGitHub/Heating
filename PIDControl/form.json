@@ -1,5 +1,30 @@
 {
-    "elements": [],
+    "elements": [
+        {   
+            "type": "Label",
+            "label": "PID controller" 
+        },
+
+        {
+            "type": "NumberSpinner",
+            "name": "KP", 
+            "caption": "Kp"
+        },
+
+        {   
+            "type": "NumberSpinner", 
+            "name": "KI", 
+            "caption": "Ki", 
+            "suffix": "seconds"
+        },
+        
+        {
+            "name": "ValveID",
+            "type": "SelectInstance",
+            "caption": "Valve ID"
+        }
+
+    ],
     "actions": [],
     "status": []
 }
