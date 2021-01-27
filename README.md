@@ -1,6 +1,6 @@
 # Heating
 
-Folgende Module beinhaltet das Heating Repository:
+Fo$this->lgende Module beinhaltet das Heating Repository:
 
 - __ValveControl__ ([Dokumentation](ValveControl))  
 	Module to control a valve used for floorheating.

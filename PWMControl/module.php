@@ -44,9 +44,7 @@
 					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint old value:".$Data[2] ." %");
 					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint new value:".$Data[0] ." %");
 					$result = $this->SetPWM($Data[0]);
-
 				}
-
 			}
 		}
 
@@ -81,6 +79,6 @@
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			$this->SetTimerInterval('OpenTimer', $duration * 1000);
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
-			
+
 		}
 	}
