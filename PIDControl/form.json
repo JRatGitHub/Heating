@@ -9,19 +9,21 @@
             "type": "NumberSpinner",
             "name": "KP", 
             "caption": "Kp",
-            "digits": 2
+            "digits": 1
         },
 
         {   
             "type": "NumberSpinner", 
             "name": "KI", 
-            "caption": "Ki"
+            "caption": "Ki",
+            "digits": 1
         },
         
         {
             "type": "NumberSpinner",
             "name": "KD", 
-            "caption": "Kd"
+            "caption": "Kd",
+            "digits": 1
         },
 
         {
