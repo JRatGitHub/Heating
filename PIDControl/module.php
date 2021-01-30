@@ -7,7 +7,9 @@
 			parent::Create();
 
 			 //Properties
-			 $this->RegisterPropertyBoolean('KP',1);
+			 $this->RegisterPropertyFloat('KP',1);
+			 $this->RegisterPropertyFloat('KI',1);
+			 $this->RegisterPropertyFloat('KD',1);
 		}
 
 		public function Destroy()
