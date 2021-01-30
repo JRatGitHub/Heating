@@ -105,8 +105,7 @@
 			 }
 		}
 
-		public function StartValveClosing()
-		{
+		public function StartValveClosing(){
 			IPS_LogMessage("Valve", "StartValveOpening triggered");
 			
 			//Disable ClosingTimer
@@ -115,8 +114,7 @@
 			SetValueBoolean($this->GetIDForIdent('HeatRequest'),False);
 		}
 
-		public function StartValveOpening()
-		{
+		public function StartValveOpening(){
 			IPS_LogMessage("Valve", "StartValveOpening triggered");
 			
 			//Disable OpeningTimer
