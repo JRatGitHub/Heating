@@ -5,6 +5,9 @@
 		{
 			//Never delete this line!
 			parent::Create();
+
+			 //Properties
+			 $this->RegisterPropertyBoolean('KP','1');
 		}
 
 		public function Destroy()
