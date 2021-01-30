@@ -7,7 +7,7 @@
 			parent::Create();
 
 			 //Properties
-			 $this->RegisterPropertyFloat('KP',1);
+			 $this->RegisterPropertyFloat('KP',0,5);
 			 $this->RegisterPropertyFloat('KI',1);
 			 $this->RegisterPropertyFloat('KD',1);
 		}

@@ -8,7 +8,8 @@
         {
             "type": "NumberSpinner",
             "name": "KP", 
-            "caption": "Kp"
+            "caption": "Kp",
+            "digits" : "2"
         },
 
         {   
