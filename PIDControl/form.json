@@ -19,6 +19,11 @@
         },
         
         {
+            "type": "NumberSpinner",
+            "name": "KD", 
+            "caption": "Kd"
+        },
+        {
             "name": "ValveID",
             "type": "SelectInstance",
             "caption": "Valve ID"
