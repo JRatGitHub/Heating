@@ -14,8 +14,7 @@
         {   
             "type": "NumberSpinner", 
             "name": "KI", 
-            "caption": "Ki", 
-            "suffix": "seconds"
+            "caption": "Ki"
         },
         
         {
@@ -27,7 +26,8 @@
         {
             "type": "NumberSpinner",
             "name": "SamplingTime", 
-            "caption": "sampling time"
+            "caption": "sampling time",
+            "suffix": "seconds"
         },
 
         {
