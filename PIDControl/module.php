@@ -10,6 +10,8 @@
 			 $this->RegisterPropertyFloat('KP',0.5);
 			 $this->RegisterPropertyFloat('KI',1);
 			 $this->RegisterPropertyFloat('KD',1);
+
+			 $this->RegisterPropertyInteger('SamplingTime',120);
 		}
 
 		public function Destroy()
