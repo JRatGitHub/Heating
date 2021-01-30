@@ -24,6 +24,11 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
+
+			$CatID = IPS_CreateCategory();       // Kategorie anlegen
+			IPS_SetName($CatID, "Category"); // Kategorie benennen
+			IPS_SetParent($CatID, $this->InstanceID); // Kategorie einsortieren unter dem Objekt mit der ID "12345"
+		//	IPS_CreateCategory( $this->InstanceID)
 		}
 
 	}
