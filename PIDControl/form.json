@@ -23,6 +23,13 @@
             "name": "KD", 
             "caption": "Kd"
         },
+
+        {
+            "type": "NumberSpinner",
+            "name": "SamplingTime", 
+            "caption": "sampling time"
+        },
+
         {
             "name": "ValveID",
             "type": "SelectInstance",
