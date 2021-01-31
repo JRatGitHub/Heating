@@ -16,7 +16,7 @@
 			 $this->RegisterPropertyInteger('OutputMin',10);
 			 $this->RegisterPropertyInteger('OutputMax',100);
 			
-			$CatID = IPS_CreateCategory('ViaFunction');
+			$this->CreateCategory('ViaFunction');
 			//IPS_SetName($CatID, "CategoryDuringCreate");
 			//IPS_SetParent($CatID, $this->InstanceID);
 		}
@@ -49,7 +49,7 @@
 			//we need to create one
 			if ($eid == 0) {
 				$CatID = IPS_CreateCategory();
-				IPS_SetName($CatID, "CreateCategory");
+				IPS_SetName($CatID, $Ident);
 				IPS_SetParent($CatID, $this->InstanceID);	
 				//$EventID = IPS_CreateEvent($Typ);
 		    	//IPS_SetParent($EventID, $Parent);
