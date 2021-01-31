@@ -14,6 +14,7 @@ Beschreibung des Moduls.
 ### 1. Funktionsumfang
 
 - https://www.csimn.com/CSI_pages/PIDforDummies.html
+- https://en.wikipedia.org/wiki/PID_controller#Manual_tuning
 
 ### 2. Vorraussetzungen
 
