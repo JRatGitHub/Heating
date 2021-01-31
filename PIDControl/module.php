@@ -16,6 +16,8 @@
 			 $this->RegisterPropertyInteger('OutputMin',10);
 			 $this->RegisterPropertyInteger('OutputMax',100);
 			
+			//Variables
+			$Setpoint = $this->RegisterVariableInteger('SETPOINT','Setpoint','Precentage');
 			$this->CreateCategory('ViaFunction');
 			//IPS_SetName($CatID, "CategoryDuringCreate");
 			//IPS_SetParent($CatID, $this->InstanceID);
@@ -32,9 +34,9 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-			$CatID = IPS_CreateCategory();
-			IPS_SetName($CatID, "Category");
-			IPS_SetParent($CatID, $this->InstanceID);
+		//	$CatID = IPS_CreateCategory();
+		//	IPS_SetName($CatID, "Category");
+		//	IPS_SetParent($CatID, $this->InstanceID);
 		}
 
 		public function CreateCategory($Ident){
