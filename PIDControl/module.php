@@ -15,6 +15,10 @@
 
 			 $this->RegisterPropertyInteger('OutputMin',10);
 			 $this->RegisterPropertyInteger('OutputMax',100);
+			
+			$CatID = IPS_CreateCategory();
+			IPS_SetName($CatID, "CategoryDuringCreate");
+			IPS_SetParent($CatID, $this->InstanceID);
 		}
 
 		public function Destroy()
@@ -31,6 +35,13 @@
 			$CatID = IPS_CreateCategory();
 			IPS_SetName($CatID, "Category");
 			IPS_SetParent($CatID, $this->InstanceID);
+		}
+
+		public function CreateCategory($CatName){
+			$CatID = IPS_CreateCategory();
+			IPS_SetName($CatID, "CreateCategory");
+			IPS_SetParent($CatID, $this->InstanceID);
+			
 		}
 
 	}
