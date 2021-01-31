@@ -34,6 +34,20 @@
         },
 
         {
+            "type": "NumberSpinner",
+            "name": "OutputMin", 
+            "caption": "Output Minimal",
+            "suffix": "%"
+        },
+
+        {
+            "type": "NumberSpinner",
+            "name": "OutputMax", 
+            "caption": "Output Maximal",
+            "suffix": "%"
+        },
+
+        {
             "name": "ValveID",
             "type": "SelectInstance",
             "caption": "Valve ID"
