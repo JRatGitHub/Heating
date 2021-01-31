@@ -45,6 +45,18 @@
             "name": "OutputMax", 
             "caption": "Output Maximal",
             "suffix": "%"
+        },
+
+        {
+            "name": "Setpoint",
+            "type": "SelectVariable",
+            "caption": "Setpoint ID"
+        },
+
+        {
+            "name": "RoomTemperature",
+            "type": "SelectVariable",
+            "caption": "Room Temperature ID"
         }
 
     ],
