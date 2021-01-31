@@ -17,7 +17,7 @@
 			 $this->RegisterPropertyInteger('OutputMax',100);
 			
 			//Variables
-			$Setpoint = $this->RegisterVariableInteger('SETPOINT','Setpoint','Precentage');
+			$Setpoint = $this->RegisterVariableInteger('SETPOINT','Setpoint','Percentage');
 			$this->CreateCategory('ViaFunction');
 			//IPS_SetName($CatID, "CategoryDuringCreate");
 			//IPS_SetParent($CatID, $this->InstanceID);
