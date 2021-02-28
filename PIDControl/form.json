@@ -14,10 +14,15 @@
         {   
             "type": "NumberSpinner", 
             "name": "KI", 
-            "caption": "Ki", 
-            "suffix": "seconds"
+            "caption": "Ki"
         },
         
+        {   
+            "type": "NumberSpinner", 
+            "name": "KD", 
+            "caption": "Kd"
+        },
+
         {
             "name": "ValveID",
             "type": "SelectInstance",
