@@ -8,13 +8,15 @@
         {
             "type": "NumberSpinner",
             "name": "KP", 
-            "caption": "Kp"
+            "caption": "Kp",
+            "digits": 1
         },
 
         {   
             "type": "NumberSpinner", 
             "name": "KI", 
-            "caption": "Ki"
+            "caption": "Ki",
+            "digits": 1
         },
         
         {   
@@ -24,9 +26,43 @@
         },
 
         {
-            "name": "ValveID",
-            "type": "SelectInstance",
-            "caption": "Valve ID"
+            "type": "NumberSpinner",
+            "name": "KD", 
+            "caption": "Kd",
+            "digits": 1
+        },
+
+        {
+            "type": "NumberSpinner",
+            "name": "SamplingTime", 
+            "caption": "sampling time",
+            "suffix": "seconds"
+        },
+
+        {
+            "type": "NumberSpinner",
+            "name": "OutputMin", 
+            "caption": "Output Minimal",
+            "suffix": "%"
+        },
+
+        {
+            "type": "NumberSpinner",
+            "name": "OutputMax", 
+            "caption": "Output Maximal",
+            "suffix": "%"
+        },
+
+        {
+            "name": "Setpoint",
+            "type": "SelectVariable",
+            "caption": "Setpoint ID"
+        },
+
+        {
+            "name": "RoomTemperature",
+            "type": "SelectVariable",
+            "caption": "Room Temperature ID"
         }
 
     ],
