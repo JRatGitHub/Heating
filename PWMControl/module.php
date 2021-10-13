@@ -124,12 +124,12 @@
 
 		public function UpdateRemaining() {
         	$secondsRemaining = 0;
-			if ($this->ReadPropertyBoolean('PWMOutput') == True){
+			if ($PWMOutput== True){
 				$TimerName = 'OpenTimer';
 			} else {
 				$TimerName = 'ClosedTimer';
 			}
-
+			IPS_LogMessage("PWMControl", "Timer running: ".$TimerName);
         	foreach (IPS_GetTimerList() as $timerID) {
             	$timer = IPS_GetTimer($timerID);
             	if (($timer['InstanceID'] == $this->InstanceID) && ($timer['Name'] == $TimerName)) {
