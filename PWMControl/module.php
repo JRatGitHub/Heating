@@ -78,9 +78,15 @@
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			// Switch the output to false
+			
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
 			$this->SetTimerInterval('OpenTimer', $duration * 1000);
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
-
+			if($duration<=0){
+				IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec. and output set to false");
+				SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
+				$this->SetTimerInterval('OpenTimer', 0);
+				$this->SetTimerInterval('ClosedTimer',0);
+			} 
 		}
 	}
