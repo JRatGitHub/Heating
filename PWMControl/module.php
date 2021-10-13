@@ -120,15 +120,19 @@
 					$this->UpdateRemaining();
 				}
 			}
-
-
 		}
 
-		public function UpdateRemaining(){
+		public function UpdateRemaining() {
         	$secondsRemaining = 0;
+			if ($this->ReadPropertyBoolean('PWMOutput')){
+				$TimerName = 'OpenTimer';
+			} else {
+				$TimerName = 'ClosedTimer';
+			}
+
         	foreach (IPS_GetTimerList() as $timerID) {
             	$timer = IPS_GetTimer($timerID);
-            	if (($timer['InstanceID'] == $this->InstanceID) && ($timer['Name'] == 'OpenTimer')) {
+            	if (($timer['InstanceID'] == $this->InstanceID) && ($timer['Name'] == $TimerName)) {
                 	$secondsRemaining = $timer['NextRun'] - time();
                 	break;
             	}
@@ -137,8 +141,7 @@
         	$this->SetValue('Status', sprintf('%02d:%02d:%02d', ($secondsRemaining / 3600), ($secondsRemaining / 60 % 60), $secondsRemaining % 60));
     	}
 
-		public function ToggleDisplayInterval($visible)
-		{
+		public function ToggleDisplayInterval($visible) {
 			$this->UpdateFormField('UpdateInterval', 'visible', $visible);
 		}
 	}
