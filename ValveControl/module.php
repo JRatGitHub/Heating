@@ -121,6 +121,7 @@
 			$this->SetTimerInterval('OpeningTimer', 0);
 			SetValueString($this->GetIDForIdent('Status'),"Valve open");
 			SetValueBoolean($this->GetIDForIdent('HeatRequest'),True);
+			SetValueBoolean($this->ReadPropertyInteger('HeatRequestID'),True);
 		}
 
 		public function ValveOff()
@@ -129,6 +130,7 @@
 			//IPS_LogMessage('Heating', $ValveID ."\n");
 			
 			HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
+			SetValueBoolean($this->ReadPropertyInteger('HeatRequestID'),False);
 		}
 
 		public function ValveOn()
