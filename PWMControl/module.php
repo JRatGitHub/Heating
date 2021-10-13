@@ -18,6 +18,9 @@
 			 //Timers
 			$this->RegisterTimer('OpenTimer', 0, "PWM_OpenTimeEnded(\$_IPS['TARGET']);");
 			$this->RegisterTimer('ClosedTimer', 0, "PWM_ClosedTimeEnded(\$_IPS['TARGET']);");
+
+			//intialize
+			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
 		}
 
 		public function Destroy()
