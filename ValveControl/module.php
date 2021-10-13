@@ -112,6 +112,7 @@
 			$this->SetTimerInterval('ClosingTimer', 0);
 			SetValueString($this->GetIDForIdent('Status'),"Valve closed");
 			SetValueBoolean($this->GetIDForIdent('HeatRequest'),False);
+			SetValueBoolean($this->ReadPropertyInteger('HeatRequestID'),False);
 		}
 
 		public function StartValveOpening(){
