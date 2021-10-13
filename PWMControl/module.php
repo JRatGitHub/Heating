@@ -97,6 +97,18 @@
 			}
 
 
-			
 		}
+
+		public function UpdateRemaining(){
+        	$secondsRemaining = 0;
+        	foreach (IPS_GetTimerList() as $timerID) {
+            	$timer = IPS_GetTimer($timerID);
+            	if (($timer['InstanceID'] == $this->InstanceID) && ($timer['Name'] == 'OffTimer')) {
+                	$secondsRemaining = $timer['NextRun'] - time();
+                	break;
+            	}
+        	}
+        	//Display remaining time as string
+        	$this->SetValue('Remaining', sprintf('%02d:%02d:%02d', ($secondsRemaining / 3600), ($secondsRemaining / 60 % 60), $secondsRemaining % 60));
+    	}
 	}
