@@ -13,7 +13,7 @@
 
 			 $this->RegisterPropertyInteger('UpdateInterval', 10);
 			 //$this->RegisterPropertyBoolean('ResendAction', false);
-			 $this->RegisterPropertyBoolean('DisplayRemaining', false);
+			 $this->RegisterPropertyBoolean('DisplayStatus', false);
 
 			 //Variables
 			 $PWMSetpoint = $this->RegisterVariableInteger('PWMSetpoint', 'Setpoint', '~Intensity.100',0);
@@ -46,7 +46,7 @@
 			$this->RegisterReference($this->GetIDForIdent('PWMSetpoint')); 
 
 			//Register variable if enabled
-			$this->MaintainVariable('Remaining', 'Remaining time', VARIABLETYPE_STRING, '', 10, $this->ReadPropertyBoolean('DisplayRemaining'));
+			$this->MaintainVariable('Status', 'Status', VARIABLETYPE_STRING, '', 10, $this->ReadPropertyBoolean('DisplayStatus'));
 		}
 
 		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) {
@@ -134,7 +134,7 @@
             	}
         	}
         	//Display remaining time as string
-        	$this->SetValue('Remaining', sprintf('%02d:%02d:%02d', ($secondsRemaining / 3600), ($secondsRemaining / 60 % 60), $secondsRemaining % 60));
+        	$this->SetValue('Status', sprintf('%02d:%02d:%02d', ($secondsRemaining / 3600), ($secondsRemaining / 60 % 60), $secondsRemaining % 60));
     	}
 
 		public function ToggleDisplayInterval($visible)

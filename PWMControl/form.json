@@ -25,9 +25,9 @@
         },
         {
             "type": "CheckBox",
-            "name": "DisplayRemaining",
-            "caption": "Display remaining time",
-            "onChange": "PWM_ToggleDisplayInterval($id, $DisplayRemaining);"
+            "name": "DisplayStatus",
+            "caption": "Display status",
+            "onChange": "PWM_ToggleDisplayInterval($id, $DisplayStatus);"
         }
 
     ],
