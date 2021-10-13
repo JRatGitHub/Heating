@@ -104,6 +104,11 @@
 				$this->SetTimerInterval('ClosedTimer',0);
 				$this->SetTimerInterval('OpenTimer', $duration * 1000);
 				SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
+				//Update display variable periodically if enabled
+				if ($this->ReadPropertyBoolean('DisplayRemaining')) {
+					$this->SetTimerInterval('UpdateRemainingTimer', 1000 * $this->ReadPropertyInteger('UpdateInterval'));
+					$this->UpdateRemaining();
+				}
 			}
 
 
