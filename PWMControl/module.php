@@ -115,7 +115,7 @@
 				SetValueBoolean($this->ReadPropertyInteger('ValveID'),True);
 					
 				//Update display variable periodically if enabled
-				if ($this->ReadPropertyBoolean('DisplayRemaining')) {
+				if ($this->ReadPropertyBoolean('DisplayStatus')) {
 					$this->SetTimerInterval('UpdateRemainingTimer', 1000 * $this->ReadPropertyInteger('UpdateInterval'));
 					$this->UpdateRemaining();
 				}
