@@ -28,6 +28,7 @@
 
 			//intialize
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
+			SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
 		}
 
 		public function Destroy()
@@ -65,6 +66,8 @@
 			IPS_LogMessage("PWMControl", "OpenTimeEnded triggered.");
 			$this->SetTimerInterval('OpenTimer',0);
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
+			SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
+
 			$Setpoint = GetValueInteger($this->GetIDForIdent('PWMSetpoint'));
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * (100-$Setpoint);
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
@@ -75,6 +78,7 @@
 			IPS_LogMessage("PWMControl", "ClosedTimeEnded triggered.");
 			$this->SetTimerInterval('ClosedTimer',0);
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
+			SetValueBoolean($this->ReadPropertyInteger('ValveID'),True);
 			$Setpoint = GetValueInteger($this->GetIDForIdent('PWMSetpoint'));
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
@@ -92,6 +96,7 @@
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			// Switch the output to false
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
+			SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
 			
 			//$this->SetTimerInterval('OpenTimer', $duration * 1000);
 			//SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
@@ -107,8 +112,8 @@
 				$this->SetTimerInterval('ClosedTimer',0);
 				$this->SetTimerInterval('OpenTimer', $duration * 1000);
 				SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
-				SetValueBoolean($this->ReadPropertyInteger('PWMOutput'),True);
-				
+				SetValueBoolean($this->ReadPropertyInteger('ValveID'),True);
+					
 				//Update display variable periodically if enabled
 				if ($this->ReadPropertyBoolean('DisplayRemaining')) {
 					$this->SetTimerInterval('UpdateRemainingTimer', 1000 * $this->ReadPropertyInteger('UpdateInterval'));
