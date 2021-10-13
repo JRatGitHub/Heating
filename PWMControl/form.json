@@ -22,8 +22,13 @@
             "name": "ValveID",
             "type": "SelectVariable",
             "caption": "Valve ID"
+        },
+        {
+            "type": "CheckBox",
+            "name": "DisplayRemaining",
+            "caption": "Display remaing time",
+            "onChange": "PWM_ToggleDisplayInterval($id, $DisplayRemaining);"
         }
-
 
     ],
     "actions": [],

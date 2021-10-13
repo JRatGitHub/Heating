@@ -11,13 +11,20 @@
 			 $this->RegisterPropertyInteger('PWMsetpointID', 0);
 			 $this->RegisterPropertyInteger('ValveID', 0);
 
+			 $this->RegisterPropertyInteger('UpdateInterval', 10);
+			 //$this->RegisterPropertyBoolean('ResendAction', false);
+			 $this->RegisterPropertyBoolean('DisplayRemaining', false);
+
 			 //Variables
 			 $PWMSetpoint = $this->RegisterVariableInteger('PWMSetpoint', 'Setpoint', '~Intensity.100',0);
 			 $PWMOutput = $this->RegisterVariableBoolean('PWMOutput', 'Output');
 
+
+
 			 //Timers
 			$this->RegisterTimer('OpenTimer', 0, "PWM_OpenTimeEnded(\$_IPS['TARGET']);");
 			$this->RegisterTimer('ClosedTimer', 0, "PWM_ClosedTimeEnded(\$_IPS['TARGET']);");
+			$this->RegisterTimer('UpdateRemainingTimer', 0, "PWM_UpdateRemaining(\$_IPS['TARGET']);");
 
 			//intialize
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
@@ -36,6 +43,9 @@
 
 			$this->RegisterMessage($this->GetIDForIdent('PWMSetpoint'), VM_UPDATE);
 			$this->RegisterReference($this->GetIDForIdent('PWMSetpoint')); 
+
+			//Register variable if enabled
+			$this->MaintainVariable('Remaining', $this->Translate('Remaining time'), VARIABLETYPE_STRING, '', 10, $this->ReadPropertyBoolean('DisplayRemaining'));
 		}
 
 		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) {
