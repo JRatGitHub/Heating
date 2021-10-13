@@ -98,6 +98,7 @@
 			if($duration<=0){
 				IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec. and output set to false");
 				SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
+				SetValueBoolean($this->ReadPropertyInteger('PWMOutput'),False);
 				$this->SetTimerInterval('OpenTimer', 0);
 				$this->SetTimerInterval('ClosedTimer',0);
 				$this->SetTimerInterval('UpdateRemainingTimer',0);
@@ -106,6 +107,7 @@
 				$this->SetTimerInterval('ClosedTimer',0);
 				$this->SetTimerInterval('OpenTimer', $duration * 1000);
 				SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
+				SetValueBoolean($this->ReadPropertyInteger('PWMOutput'),True);
 				
 				//Update display variable periodically if enabled
 				if ($this->ReadPropertyBoolean('DisplayRemaining')) {
