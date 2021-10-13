@@ -121,4 +121,9 @@
         	//Display remaining time as string
         	$this->SetValue('Remaining', sprintf('%02d:%02d:%02d', ($secondsRemaining / 3600), ($secondsRemaining / 60 % 60), $secondsRemaining % 60));
     	}
+
+		public function ToggleDisplayInterval($visible)
+		{
+			$this->UpdateFormField('UpdateInterval', 'visible', $visible);
+		}
 	}
