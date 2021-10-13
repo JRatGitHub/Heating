@@ -124,7 +124,7 @@
 
 		public function UpdateRemaining() {
         	$secondsRemaining = 0;
-			if ($PWMOutput== True){
+			if ($this->ReadPropertyBoolean('PWMOutput') == True){
 				$TimerName = 'OpenTimer';
 			} else {
 				$TimerName = 'ClosedTimer';
