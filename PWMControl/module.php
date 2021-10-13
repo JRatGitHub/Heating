@@ -28,7 +28,7 @@
 
 			//intialize
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
-			SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
+			//SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
 		}
 
 		public function Destroy()
