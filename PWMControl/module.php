@@ -107,7 +107,7 @@
 				$this->SetTimerInterval('OpenTimer', 0);
 				$this->SetTimerInterval('ClosedTimer',0);
 				$this->SetTimerInterval('UpdateRemainingTimer',0);
-				$this->SetValue('Remaining', '-');
+				$this->SetValue('Status', '-');
 			} else {
 				$this->SetTimerInterval('ClosedTimer',0);
 				$this->SetTimerInterval('OpenTimer', $duration * 1000);

@@ -23,6 +23,7 @@
             "type": "SelectVariable",
             "caption": "Valve ID"
         },
+        
         {
             "type": "CheckBox",
             "name": "DisplayStatus",
