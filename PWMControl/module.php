@@ -45,7 +45,7 @@
 			$this->RegisterReference($this->GetIDForIdent('PWMSetpoint')); 
 
 			//Register variable if enabled
-			$this->MaintainVariable('Remaining', $this->Translate('Remaining time'), VARIABLETYPE_STRING, '', 10, $this->ReadPropertyBoolean('DisplayRemaining'));
+			$this->MaintainVariable('Remaining', 'Remaining time', VARIABLETYPE_STRING, '', 10, $this->ReadPropertyBoolean('DisplayRemaining'));
 		}
 
 		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) {
@@ -104,6 +104,7 @@
 				$this->SetTimerInterval('ClosedTimer',0);
 				$this->SetTimerInterval('OpenTimer', $duration * 1000);
 				SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
+				
 				//Update display variable periodically if enabled
 				if ($this->ReadPropertyBoolean('DisplayRemaining')) {
 					$this->SetTimerInterval('UpdateRemainingTimer', 1000 * $this->ReadPropertyInteger('UpdateInterval'));
