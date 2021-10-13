@@ -103,7 +103,7 @@
 			if($duration<=0){
 				IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec. and output set to false");
 				SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
-				SetValueBoolean($this->ReadPropertyInteger('PWMOutput'),False);
+				SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
 				$this->SetTimerInterval('OpenTimer', 0);
 				$this->SetTimerInterval('ClosedTimer',0);
 				$this->SetTimerInterval('UpdateRemainingTimer',0);
