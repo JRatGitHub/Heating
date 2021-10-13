@@ -79,6 +79,7 @@
 			$this->SetTimerInterval('ClosedTimer',0);
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
 			SetValueBoolean($this->ReadPropertyInteger('ValveID'),True);
+			
 			$Setpoint = GetValueInteger($this->GetIDForIdent('PWMSetpoint'));
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");

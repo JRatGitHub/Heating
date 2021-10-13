@@ -89,7 +89,7 @@
 						$this->SetTimerInterval('OpenTimeCounter', 60 * 1000);
 					} else {
 						
-						IPS_LogMessage("MessageSink", "ValveRequest is close");
+						IPS_LogMessage("MessageSink", "ValveRequest is close. ValveID: " .$this->ReadPropertyInteger('ValveID') );
 						HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
 						SetValueString($this->GetIDForIdent('Status'),"Valve closing ...");
 						SetValueBoolean($this->GetIDForIdent('ValveStatus'),False);
