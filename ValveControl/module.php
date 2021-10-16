@@ -31,7 +31,7 @@
 
 			//intialize
 			SetValueBoolean($this->GetIDForIdent('ValveRequest'),False);
-			//HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
+			HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
 		}
 
 		public function Destroy()
