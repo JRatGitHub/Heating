@@ -25,10 +25,13 @@
 			$this->RegisterTimer('ClosingTimer', 0, "VALVE_StartValveClosing(\$_IPS['TARGET']);");
 			$this->RegisterTimer('OpenTimeCounter', 0, "VALVE_IncrementValveOpenCounter(\$_IPS['TARGET']);");
 
-
-
 			// events
 			$this->RegisterResetCounter('ResetCounter', 'VALVE_ResetValveOpenCounter($id)');	
+
+
+			//intialize
+			SetValueBoolean($this->GetIDForIdent('ValveRequest'),False);
+			HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
 		}
 
 		public function Destroy()
