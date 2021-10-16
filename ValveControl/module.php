@@ -29,9 +29,7 @@
 			$this->RegisterResetCounter('ResetCounter', 'VALVE_ResetValveOpenCounter($id)');	
 
 
-			//intialize
-			SetValueBoolean($this->GetIDForIdent('ValveRequest'),False);
-			//HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
+			
 		}
 
 		public function Destroy()
@@ -49,6 +47,9 @@
 			$this->RegisterReference($this->GetIDForIdent('ValveRequest')); 
 			//IPS_LogMessage('Valve:Register', $this->GetIDForIdent('ValveRequest'));
 
+			//intialize
+			SetValueBoolean($this->GetIDForIdent('ValveRequest'),False);
+			HM_WriteValueBoolean($this->ReadPropertyInteger('ValveID'),'STATE',False);
 		}
 
 		protected function RegisterResetCounter($ident, $script) {
