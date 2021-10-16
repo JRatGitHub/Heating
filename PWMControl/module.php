@@ -28,6 +28,7 @@
 
 			//intialize
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
+			$this->SetValue('Status', '-');
 			//SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
 		}
 
