@@ -103,7 +103,7 @@
 			//$this->SetTimerInterval('OpenTimer', $duration * 1000);
 			//SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
 
-			switch($duration){
+			switch($Setpoint){
 				case 0:
 					IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec. and output set to false");
 					SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
@@ -120,9 +120,10 @@
 					$this->SetTimerInterval('OpenTimer', 0);
 					$this->SetTimerInterval('ClosedTimer',0);
 					$this->SetTimerInterval('UpdateRemainingTimer',0);
-					$this->SetValue('Status', 'open%'); 
+					$this->SetValue('Status', 'Open 100%'); 
 					break;
 				default:
+					IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " c. and output set to true");
 					$this->SetTimerInterval('ClosedTimer',0);
 					$this->SetTimerInterval('OpenTimer', $duration * 1000);
 					SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
