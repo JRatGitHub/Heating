@@ -102,26 +102,60 @@
 			
 			//$this->SetTimerInterval('OpenTimer', $duration * 1000);
 			//SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
-			if($duration<=0){
-				IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec. and output set to false");
-				SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
-				SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
-				$this->SetTimerInterval('OpenTimer', 0);
-				$this->SetTimerInterval('ClosedTimer',0);
-				$this->SetTimerInterval('UpdateRemainingTimer',0);
-				$this->SetValue('Status', '-');
-			} else {
-				$this->SetTimerInterval('ClosedTimer',0);
-				$this->SetTimerInterval('OpenTimer', $duration * 1000);
-				SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
-				SetValueBoolean($this->ReadPropertyInteger('ValveID'),True);
+
+			switch($duration){
+				case 0:
+					IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec. and output set to false");
+					SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
+					SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
+					$this->SetTimerInterval('OpenTimer', 0);
+					$this->SetTimerInterval('ClosedTimer',0);
+					$this->SetTimerInterval('UpdateRemainingTimer',0);
+					$this->SetValue('Status', '-'); 
+					break;
+				case 100:
+					IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec. and output set to true");
+					SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
+					SetValueBoolean($this->ReadPropertyInteger('ValveID'),True);
+					$this->SetTimerInterval('OpenTimer', 0);
+					$this->SetTimerInterval('ClosedTimer',0);
+					$this->SetTimerInterval('UpdateRemainingTimer',0);
+					$this->SetValue('Status', '100%'); 
+					break;
+				default:
+					$this->SetTimerInterval('ClosedTimer',0);
+					$this->SetTimerInterval('OpenTimer', $duration * 1000);
+					SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
+					SetValueBoolean($this->ReadPropertyInteger('ValveID'),True);
+					
+					//Update display variable periodically if enabled
+					if ($this->ReadPropertyBoolean('DisplayStatus')) {
+						$this->SetTimerInterval('UpdateRemainingTimer', 1000 * $this->ReadPropertyInteger('UpdateInterval'));
+						$this->UpdateRemaining();
+					}
+					break;
+			}
+
+	//		if($duration<=0){
+	//			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec. and output set to false");
+	//			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
+	//			SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
+	//			$this->SetTimerInterval('OpenTimer', 0);
+	//			$this->SetTimerInterval('ClosedTimer',0);
+	//			$this->SetTimerInterval('UpdateRemainingTimer',0);
+	//			$this->SetValue('Status', '-');
+	//		} else {
+	//			$this->SetTimerInterval('ClosedTimer',0);
+	//			$this->SetTimerInterval('OpenTimer', $duration * 1000);
+	//			SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
+	//			SetValueBoolean($this->ReadPropertyInteger('ValveID'),True);
 					
 				//Update display variable periodically if enabled
-				if ($this->ReadPropertyBoolean('DisplayStatus')) {
-					$this->SetTimerInterval('UpdateRemainingTimer', 1000 * $this->ReadPropertyInteger('UpdateInterval'));
-					$this->UpdateRemaining();
-				}
-			}
+	//			if ($this->ReadPropertyBoolean('DisplayStatus')) {
+	//				$this->SetTimerInterval('UpdateRemainingTimer', 1000 * $this->ReadPropertyInteger('UpdateInterval'));
+	//				$this->UpdateRemaining();
+	//			}
+	//		}
 		}
 
 		public function UpdateRemaining() {
