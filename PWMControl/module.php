@@ -95,10 +95,10 @@
 		protected function SetPWM($Setpoint){
 			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: ".$Setpoint);
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
-			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
+	//		IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			// Switch the output to false
-			SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
-			SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
+	//		SetValueBoolean($this->GetIDForIdent('PWMOutput'),False);
+	//		SetValueBoolean($this->ReadPropertyInteger('ValveID'),False);
 			
 			//$this->SetTimerInterval('OpenTimer', $duration * 1000);
 			//SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
@@ -120,7 +120,7 @@
 					$this->SetTimerInterval('OpenTimer', 0);
 					$this->SetTimerInterval('ClosedTimer',0);
 					$this->SetTimerInterval('UpdateRemainingTimer',0);
-					$this->SetValue('Status', '100%'); 
+					$this->SetValue('Status', 'open%'); 
 					break;
 				default:
 					$this->SetTimerInterval('ClosedTimer',0);
