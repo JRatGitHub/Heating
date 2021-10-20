@@ -18,13 +18,14 @@
 			 $this->RegisterPropertyInteger('RoomSetpointID', 0);
 			 $this->RegisterPropertyInteger('RoomTemperatureID', 0);
 			 $this->RegisterPropertyInteger('OutputPWM', 0);
+			 $this->RegisterPropertyBoolean('DisplayStatus', false);
 
 
 
 			//Variables
 			$Output = $this->RegisterVariableInteger('OUTPUT','Output','~Intensity.100');
 			
-			$this->CreateCategory('ViaFunction');
+			//$this->CreateCategory('ViaFunction');
 			//IPS_SetName($CatID, "CategoryDuringCreate");
 			//IPS_SetParent($CatID, $this->InstanceID);
 		}
@@ -39,6 +40,9 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
+
+			//Register variable if enabled
+			$this->MaintainVariable('Status', 'Status', VARIABLETYPE_STRING, '', 10, $this->ReadPropertyBoolean('DisplayStatus'));
 
 		//	$CatID = IPS_CreateCategory();
 		//	IPS_SetName($CatID, "Category");

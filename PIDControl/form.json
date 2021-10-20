@@ -62,6 +62,13 @@
             "name": "OutputPWM",
             "type": "SelectVariable",
             "caption": "PWM output [%]"
+        },
+
+        {
+            "type": "CheckBox",
+            "name": "DisplayStatus",
+            "caption": "Display status",
+            "onChange": "PID_ToggleDisplayInterval($id, $DisplayStatus);"
         }
 
 
