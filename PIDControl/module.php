@@ -17,7 +17,7 @@
 			 $this->RegisterPropertyInteger('OutputMax',100);
 			 $this->RegisterPropertyInteger('RoomSetpointID', 0);
 			 $this->RegisterPropertyInteger('RoomTemperatureID', 0);
-			 $this->RegisterPropertyInteger('RoomTemperatureID', 0);
+			 $this->RegisterPropertyInteger('OutputPWM', 0);
 
 
 
