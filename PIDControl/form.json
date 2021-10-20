@@ -27,13 +27,6 @@
 
         {
             "type": "NumberSpinner",
-            "name": "KD", 
-            "caption": "Kd",
-            "digits": 1
-        },
-
-        {
-            "type": "NumberSpinner",
             "name": "SamplingTime", 
             "caption": "sampling time",
             "suffix": "seconds"
