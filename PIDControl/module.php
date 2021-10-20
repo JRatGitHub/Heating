@@ -75,4 +75,7 @@
 		//	IPS_SetParent($CatID, $this->InstanceID);	
 		}
 
+		public function ToggleDisplayInterval($visible) {
+			$this->UpdateFormField('UpdateInterval', 'visible', $visible);
+		}
 	}
