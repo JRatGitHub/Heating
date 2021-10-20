@@ -15,7 +15,12 @@
 
 			 $this->RegisterPropertyInteger('OutputMin',10);
 			 $this->RegisterPropertyInteger('OutputMax',100);
-			
+			 $this->RegisterPropertyInteger('RoomSetpointID', 0);
+			 $this->RegisterPropertyInteger('RoomTemperatureID', 0);
+			 $this->RegisterPropertyInteger('RoomTemperatureID', 0);
+
+
+
 			//Variables
 			$Output = $this->RegisterVariableInteger('OUTPUT','Output','~Intensity.100');
 			

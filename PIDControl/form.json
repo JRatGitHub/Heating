@@ -47,13 +47,13 @@
         },
 
         {
-            "name": "RoomSetpoint",
+            "name": "RoomSetpointID",
             "type": "SelectVariable",
             "caption": "Room Setpoint ID [°C]"
         },
 
         {
-            "name": "RoomTemperature",
+            "name": "RoomTemperatureID",
             "type": "SelectVariable",
             "caption": "Room Temperature ID [°C]"
         },
@@ -61,8 +61,7 @@
         {
             "name": "OutputPWM",
             "type": "SelectVariable",
-            "caption": "PWM output [%]",
-            "suffix": "%"
+            "caption": "PWM output [%]"
         }
 
 
