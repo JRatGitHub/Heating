@@ -105,7 +105,7 @@
 					$timer = IPS_GetTimer($timerID);
 					if ($timer['InstanceID'] == $this->InstanceID) {
 						$secondsRemaining = $timer['NextRun'] - time();
-						IPS_LogMessage("PWMControl", "SecondsRemaining: ".$secondsRemaining);
+						IPS_LogMessage("PWMControl", "Seconds Remaining: ".$secondsRemaining);
 						break;
 					}
 				}
