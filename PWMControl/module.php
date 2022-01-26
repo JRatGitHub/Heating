@@ -101,9 +101,18 @@
 			if ($Setpoint<>$OldSetpoint){
 				IPS_LogMessage("PWMControl", "SetPWM: Setpoint needs to be updated");
 				
+				$secondsRemaining = 0;
+				if (GetValueBoolean($this->GetIDForIdent('PWMOutput')) == True){
+					$TimerName = 'OpenTimer';
+				} else {
+					$TimerName = 'ClosedTimer';
+				}
+
+
+
 				foreach (IPS_GetTimerList() as $timerID) {
 					$timer = IPS_GetTimer($timerID);
-					if ($timer['InstanceID'] == $this->InstanceID) {
+					if (($timer['InstanceID'] == $this->InstanceID) && ($timer['Name'] == $TimerName)) {
 						$secondsRemaining = $timer['NextRun'] - time();
 						IPS_LogMessage("PWMControl", "Seconds Remaining: ".$secondsRemaining);
 						break;
