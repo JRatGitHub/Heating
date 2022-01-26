@@ -98,6 +98,20 @@
 		
 		protected function SetPWM($Setpoint, $OldSetpoint){
 			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: " .$Setpoint ." Old Setpoint: " .$OldSetpoint);
+			if ($Setpoint<>$OldSetpoint){
+				IPS_LogMessage("PWMControl", "SetPWM: Setpoint needs to be updated");
+				
+				foreach (IPS_GetTimerList() as $timerID) {
+					$timer = IPS_GetTimer($timerID);
+					if ($timer['InstanceID'] == $this->InstanceID) {
+						$secondsRemaining = $timer['NextRun'] - time();
+						IPS_LogMessage("PWMControl", "SecondsRemaining: ".$secondsRemaining);
+						break;
+					}
+				}
+
+			}
+
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
 	//		IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			// Switch the output to false
