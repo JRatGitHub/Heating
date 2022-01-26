@@ -53,12 +53,16 @@
 		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) {
 			IPS_LogMessage("PWMControl", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
 			if ($Message == VM_UPDATE) {
-				//IPS_LogMessage("PWMControl:MessageSink", "Updated");
+				IPS_LogMessage("PWMControl:MessageSink", "Updated");
 				if ($SenderID == $this->GetIDForIdent('PWMSetpoint')){
 					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint Updated");
 					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint old value:".$Data[2] ." %");
 					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint new value:".$Data[0] ." %");
-					$result = $this->SetPWM($Data[0]);
+					if($Data[2]==$Data[0]) {
+						IPS_LogMessage("PWMControl:MessageSink no PWM change needed")
+					} else{
+						$result = $this->SetPWM($Data[0]);
+					}
 				}
 			}
 		}
