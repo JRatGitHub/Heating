@@ -20,8 +20,6 @@
 			 $this->RegisterPropertyInteger('OutputPWM', 0);
 			 $this->RegisterPropertyBoolean('DisplayStatus', false);
 
-
-
 			//Variables
 			$Output = $this->RegisterVariableInteger('OUTPUT','Output','~Intensity.100');
 			
