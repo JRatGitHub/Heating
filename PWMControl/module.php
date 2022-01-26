@@ -59,7 +59,7 @@
 					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint old value:".$Data[2] ." %");
 					IPS_LogMessage("PWMControl:MessageSink", "PWMSetpoint new value:".$Data[0] ." %");
 					if($Data[2]==$Data[0]) {
-						IPS_LogMessage("PWMControl:MessageSink no PWM change needed")
+						IPS_LogMessage("PWMControl:MessageSink no PWM change needed");
 					} else{
 						$result = $this->SetPWM($Data[0]);
 					}
