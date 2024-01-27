@@ -5,7 +5,7 @@
             "label": "PWM control of floorheating see:\r\nhttps://knxshoponline.co.uk/content/Schneider/MTN6730-0001/MTN6730-0001_SW_2015_16_EN.pdf\r\nPage 64 onward"
         },
         {   "type": "Label",
-            "label" : "https://community.symcon.de/t/algorithmus-fussbodenheizung/20312" 
+            "label" : "https://partner.gira.de/data2/10183110.pdf" 
         },
         {
             "type": "Label",
