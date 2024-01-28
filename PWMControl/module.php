@@ -19,8 +19,6 @@
 			 $PWMSetpoint = $this->RegisterVariableInteger('PWMSetpoint', 'Setpoint', '~Intensity.100',0);
 			 $PWMOutput = $this->RegisterVariableBoolean('PWMOutput', 'Output');
 
-
-
 			 //Timers
 			$this->RegisterTimer('OpenTimer', 0, "PWM_OpenTimeEnded(\$_IPS['TARGET']);");
 			$this->RegisterTimer('ClosedTimer', 0, "PWM_ClosedTimeEnded(\$_IPS['TARGET']);");
@@ -85,20 +83,16 @@
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
 			SetValueBoolean($this->ReadPropertyInteger('ValveID'),True);
 			
-			$Setpoint = GetValueInteger($this->GetIDForIdent('PWMSetpoint'));
+			$Setpoint = ($this->ReadPropertyInteger($this->GetIDForIdent('PWMSetpoint')));
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			$this->SetTimerInterval('OpenTimer', $duration * 1000);
 		}
 
-
 		protected function CalculatePWM($Setpoint){
 			IPS_LogMessage("PWMControl", "CalculatePWM triggered with setpoint: ".$Setpoint);
 		}
 		
-
-
-
 		protected function SetPWM($Setpoint, $OldSetpoint){
 			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: " .$Setpoint ." Old Setpoint: " .$OldSetpoint);
 			if (($Setpoint<>$OldSetpoint)  && ($Setpoint>0)) {
