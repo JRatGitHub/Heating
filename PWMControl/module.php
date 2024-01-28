@@ -95,7 +95,7 @@
 		}
 		
 		protected function SetPWM($Setpoint, $OldSetpoint){
-			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: " .$Setpoint ." Old Setpoint: " .$OldSetpoint);
+			IPS_LogMessage("PWMControl", "SetPWM triggered with setpoint: " .$Setpoint ."%  Old Setpoint: " .$OldSetpoint . "%");
 			if (($Setpoint<>$OldSetpoint)  && ($Setpoint>0)) {
 				IPS_LogMessage("PWMControl", "SetPWM: Setpoint needs to be updated");
 				
