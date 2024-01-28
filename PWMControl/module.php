@@ -83,7 +83,8 @@
 			SetValueBoolean($this->GetIDForIdent('PWMOutput'),True);
 			SetValueBoolean($this->ReadPropertyInteger('ValveID'),True);
 			
-			$Setpoint = ($this->ReadPropertyInteger($this->GetIDForIdent('PWMSetpoint')));
+			//$Setpoint = ($this->ReadPropertyInteger($this->GetIDForIdent('PWMSetpoint')));
+			$Setpoint = GetValueInteger($this->GetIDForIdent('PWMSetpoint'));
 			$duration = ($this->ReadPropertyInteger('CycleTime')/100) * $Setpoint;
 			IPS_LogMessage("PWMControl", "SetPWM duration: ".$duration . " Sec.");
 			$this->SetTimerInterval('OpenTimer', $duration * 1000);
