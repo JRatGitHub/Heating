@@ -19,6 +19,8 @@ Beschreibung des Moduls.
 
 - IP-Symcon ab Version 5.4
 
+https://homematic-forum.de/forum/viewtopic.php?f=31&t=24890
+
 ### 3. Software-Installation
 
 * Über den Module Store das 'PWMControl'-Modul installieren.
